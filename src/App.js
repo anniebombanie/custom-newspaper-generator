@@ -12,7 +12,7 @@ class App extends Component {
       day: null,
       month: null,
       historialFact: "",
-      isLoading: true
+      isLoading: true,
     };
   }
 
@@ -35,7 +35,6 @@ class App extends Component {
   submitForm = e => {
     //prevent default behaviour of submit button
     e.preventDefault();
-
     //call API and dynamically insert month and name values from state
     axios({
       url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
@@ -43,8 +42,8 @@ class App extends Component {
     }).then(response => {
       this.setState({
         historialFact: response.data,
-        isLoading: false
-      });
+        isLoading: false,
+      })
     });
   };
 
@@ -111,17 +110,19 @@ class App extends Component {
             See my Newspaper
           </button>
         </form>
+
         <div className="newspaper">
-          
           {this.state.isLoading ? (
             <p>Generating your custom newspaper...</p>
           ) : (
             <Newspaper
-              loading={this.state.isLoading}
               fact={this.state.historialFact}
               name={this.state.userName}
             />
           )}
+          <button type="reset" onClick={this.resetForm}>
+            Get Another Newspaper
+          </button>
         </div>
       </Fragment>
     );
