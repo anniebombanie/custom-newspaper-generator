@@ -50,6 +50,7 @@ class App extends Component {
 
   resetForm = () => {
     //reset all values to original empty state
+    console.log(`reset form clicked`);
     this.setState({
       userName: "",
       day: null,
@@ -111,11 +112,16 @@ class App extends Component {
           </button>
         </form>
         <div className="newspaper">
-          <Newspaper
-            loading={this.state.isLoading}
-            fact={this.state.historialFact}
-            name={this.state.userName}
-          />
+          
+          {this.state.isLoading ? (
+            <p>Generating your custom newspaper...</p>
+          ) : (
+            <Newspaper
+              loading={this.state.isLoading}
+              fact={this.state.historialFact}
+              name={this.state.userName}
+            />
+          )}
         </div>
       </Fragment>
     );
