@@ -1,7 +1,7 @@
-import React, {Component, Fragment } from 'react';
-import axios from 'axios';
-import Newspaper from './Newspaper.js';
-import './App.css';
+import React, {Component, Fragment } from "react";
+import axios from "axios";
+import Newspaper from "./Newspaper.js";
+import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -13,15 +13,16 @@ class App extends Component {
       month: null,
       historialFact: "",
       isLoading: true,
+      result: false
     };
   }
 
   // componentDidMount() {
-  //   console.log('component mounted');
+  //   console.log("component mounted");
   // }
 
   handleChange = e => {
-    // store values as variables to use later (so it's cleaner)
+    // store values as variables to use later (so it"s cleaner)
     // Target name of element first so we know which one is being changed and then grab its value and set the name = value
     const targetName = e.target.name; // month
     const targetVal = e.target.value; // 11
@@ -45,6 +46,10 @@ class App extends Component {
         isLoading: false,
       })
     });
+    //change result to true for conditional rendering
+    this.setState({
+      result: true
+    });
   };
 
   resetForm = () => {
@@ -63,7 +68,7 @@ class App extends Component {
     return (
       <Fragment>
         <form action="" className="historicalFact">
-          <label htmlFor="userName">What is your full name?</label>
+          <label htmlFor="userName">What's your full name?</label>
           <input
             type="text"
             id="userName"
@@ -71,7 +76,7 @@ class App extends Component {
             placeholder="Enter your full name here"
             onChange={this.handleChange}
           />
-          <legend>When is your birthday?</legend>
+          <legend>When's your birthday?</legend>
           <label htmlFor="month">Month</label>
           <select
             id="month"
@@ -104,26 +109,28 @@ class App extends Component {
             defaultValue={this.state.day}
             onChange={this.handleChange}
           />
-          {/* ADD THIS LATER WHEN CALLING NYTIMES API <label htmlFor='year'>Day</label>
-          <input type='number' min='1900' max='2019' id='year' /> */}
+          {/* ADD THIS LATER WHEN CALLING NYTIMES API <label htmlFor="year">Day</label>
+          <input type="number" min="1900" max="2019" id="year" /> */}
           <button type="submit" onClick={this.submitForm}>
-            See my Newspaper
+            Get my Newspaper
           </button>
         </form>
-
-        <div className="newspaper">
-          {this.state.isLoading ? (
-            <p>Generating your custom newspaper...</p>
-          ) : (
-            <Newspaper
-              fact={this.state.historialFact}
-              name={this.state.userName}
-            />
-          )}
-          <button type="reset" onClick={this.resetForm}>
-            Get Another Newspaper
-          </button>
-        </div>
+        
+          {this.state.results &&
+            <div className="newspaper">
+              {this.state.isLoading ? (
+                <p>Generating your custom newspaper...</p>
+              ) : (
+                <Newspaper
+                  fact={this.state.historialFact}
+                  name={this.state.userName}
+                />
+              )}
+              <button type="reset" onClick={this.resetForm}>
+                Get Another Newspaper
+              </button>
+            </div>
+          }
       </Fragment>
     );
   }
