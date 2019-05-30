@@ -60,11 +60,13 @@ class App extends Component {
       day: null,
       month: null,
       historialFact: "",
-      isLoading: true
+      isLoading: true,
+      result: false
     });
   };
 
   render() {
+    console.log(this.state.results);
     return (
       <Fragment>
         <form action="" className="historicalFact">
@@ -76,6 +78,7 @@ class App extends Component {
             placeholder="Enter your full name here"
             onChange={this.handleChange}
           />
+          
           <legend>When's your birthday?</legend>
           <label htmlFor="month">Month</label>
           <select
@@ -116,21 +119,21 @@ class App extends Component {
           </button>
         </form>
         
-          {this.state.results &&
-            <div className="newspaper">
-              {this.state.isLoading ? (
-                <p>Generating your custom newspaper...</p>
-              ) : (
-                <Newspaper
-                  fact={this.state.historialFact}
-                  name={this.state.userName}
-                />
-              )}
-              <button type="reset" onClick={this.resetForm}>
-                Get Another Newspaper
-              </button>
-            </div>
-          }
+        {this.state.result &&
+          <div className="newspaper">
+            {this.state.isLoading ? (
+              <p>Generating your custom newspaper...</p>
+            ) : (
+              <Newspaper
+                fact={this.state.historialFact}
+                name={this.state.userName}
+              />
+            )}
+            <button type="reset" onClick={this.resetForm}>
+              Get Another Newspaper
+            </button>
+          </div>
+        }
       </Fragment>
     );
   }
