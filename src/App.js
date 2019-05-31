@@ -8,12 +8,51 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      userName: '',
+      day: '',
+      month: '',
+      city: '',
+      country: '',
       historialFact: '',
       isLoading: true,
       showForm: true,
       showResult: false,
     };
   }
+
+  handleChange = (e) => {
+    //store values as variables to use later (so it's cleaner)
+    //target name of element so we know which one is being changed and then grab its value at the same time
+    const targetName = e.target.name; // month
+    const targetVal = e.target.value; // 11
+
+    this.setState({
+      //set the state of whatever is being changed to the associated value
+      [targetName]: targetVal,
+    });
+  };
+
+  submitForm = e => {
+    //prevent default behaviour of submit button
+    e.preventDefault();
+    
+    //call API and dynamically insert month and name values from state
+    axios({
+      url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+      method: 'GET'
+    }).then(response => {
+      this.setState({
+        historialFact: response.data,
+        isLoading: false,
+      })
+    });
+    
+    //change showResult to true for conditional rendering
+    this.setState({
+      showForm: false,
+      showResult: true,
+    });
+  };
   
   getRandomItem = (arr) => {
     const randomIndex = Math.floor(Math.random() * arr.length);
