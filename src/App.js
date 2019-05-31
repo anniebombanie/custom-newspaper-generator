@@ -21,7 +21,7 @@ class App extends Component {
     };
   }
 
-  handleChange = (userInput) => {
+  handleChange = (e) => {
     //store values as variables to use later (so it's cleaner)
     //target name of element so we know which one is being changed and then grab its value at the same time
     const targetName = e.target.name; // month
@@ -33,37 +33,45 @@ class App extends Component {
     });
   };
 
-  validateForm = () => {
+  validateForm = (userInput) => {
     // get the value of each input
     // check if these values are what you want
     // if they ALL are, this.submitForm();
     // otherwise, showIndividualError()
 
-    !this.state.userName
-      ? this.setState ({
-        error: 'Please input your full name!'
+    !this.error
+      ? this.submitForm()
+      : ({
+        !this.state.userName
+        ? this.setState ({
+          error: 'Please input your full name!'
+        })
+        : '',
+
+        !this.state.day
+          ? this.setState({
+            error: 'Please input a day!'
+          })
+          : '',
+
+        !this.state.month
+          ? this.setState({
+            error: 'Please choose a month!'
+          })
+          : '',
+
+        !this.state.city
+          ? this.setState({
+            error: 'Please input your city of birth!'
+          })
+          : '',
+
+        !this.state.country
+          ? this.setState({
+            error: 'Please input your country of birth!'
+          })
+          : '',
       })
-      : false,
-    !this.state.day
-      ? this.setState({
-        error: 'Please input a day!'
-      })
-      : false,
-    !this.state.month
-      ? this.setState({
-        error: 'Please choose a month!'
-      })
-      : false,
-    !this.state.city
-      ? this.setState({
-        error: 'Please input your city of birth!'
-      })
-      : false,
-    !this.state.country
-      ? this.setState({
-        error: 'Please input your country of birth!'
-      })
-      : false,
   };
   
 

@@ -20,9 +20,7 @@ class Form extends Component {
           placeholder="Enter your full name here"
           value={this.props.userName}
           required
-          onChange={userInput => {
-            this.props.validateForm(this.props.userName);
-          }}
+          onChange={this.props.userName}
         />
         <p>{this.props.error}</p>
 
@@ -35,9 +33,7 @@ class Form extends Component {
           placeholder="Enter your City here"
           value={this.props.city}
           required
-          onChange={userInput => {
-            this.props.validateForm(this.props.city);
-          }}
+          onChange={this.props.validateForm}
         />
         <p>{this.props.error}</p>
 
@@ -49,9 +45,7 @@ class Form extends Component {
           placeholder="Enter your Country here"
           value={this.props.country}
           required
-          onChange={userInput => {
-            this.props.validateForm(this.props.country);
-          }}
+          onChange={this.props.country}
         />
         <p>{this.props.error}</p>
 
@@ -63,9 +57,7 @@ class Form extends Component {
           placeholder="month"
           value={this.props.month}
           required
-          onChange={userInput => {
-            this.props.validateForm(this.props.month);
-          }}
+          onChange={this.props.validateForm}
         >
           <option>Month</option>
           <option value="1">January</option>
@@ -93,17 +85,13 @@ class Form extends Component {
           placeholder="Day"
           value={this.props.day}
           required
-          onChange={userInput => {
-            this.props.validateForm(this.props.day);
-          }}
+          onChange={this.props.day}
         />
         <p>{this.props.error}</p>
 
         <button
           type="submit"
-          onClick={userInput => {
-            this.props.validateForm();
-          }}
+          onClick={this.props.validateForm}
         >
           Get my Newspaper
         </button>
