@@ -6,14 +6,14 @@ class Newspaper extends Component {
 
     return (
       <Fragment>
-        <h1>The {this.props.city} Times</h1>
+        <h2>The {this.props.city} Times</h2>
         <h3>{this.props.country}'s no.1 Newspaper</h3>
         <div className='historicalFact'>
-          <h2>Same Day, Another Year</h2>
+          <h4>Same Day, Another Year</h4>
           <p>{this.props.fact}</p>
         </div>
         <div className='baby'>
-          <h2>World's Cutest Baby Born!</h2>
+          <h4>World's Cutest Baby Born!</h4>
           <p>Scientists are astounded by the birth of {this.props.name}. Parents are doing well.</p>
         </div>
       </Fragment>

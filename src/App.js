@@ -70,6 +70,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+      <h1>Custom Newspaper Generator</h1>
         <form action="" className="historicalFact">
           <label htmlFor="userName">What's your full name?</label>
           <input
