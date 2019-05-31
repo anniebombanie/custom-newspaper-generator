@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
 
   render() {
     return (
@@ -13,10 +19,9 @@ class Form extends Component {
           placeholder="Enter your full name here"
           value={this.props.userName}
           required
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
+          onChange={this.props.userName}
         />
+        <p>{this.props.error}</p>
 
         <legend>Where were you born?</legend>
         <label htmlFor="city">City</label>
@@ -27,11 +32,9 @@ class Form extends Component {
           placeholder="Enter your City here"
           value={this.props.city}
           required
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
+          onChange={this.props.validateForm}
         />
-        <p className="error">Please input your city!</p>
+        <p>{this.props.error}</p>
 
         <label htmlFor="country">Country</label>
         <input
@@ -41,11 +44,9 @@ class Form extends Component {
           placeholder="Enter your Country here"
           value={this.props.country}
           required
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
+          onChange={this.props.country}
         />
-        <p className="error">Please input your country!</p>
+        <p>{this.props.error}</p>
 
         <legend>When's your birthday?</legend>
         <label htmlFor="month">Month</label>
@@ -55,9 +56,7 @@ class Form extends Component {
           placeholder="month"
           value={this.props.month}
           required
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
+          onChange={this.props.validateForm}
         >
           <option>Month</option>
           <option value="1">January</option>
@@ -73,7 +72,7 @@ class Form extends Component {
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        <p className="error">Please choose a month!</p>
+        <p>{this.props.error}</p>
 
         <label htmlFor="day">Day</label>
         <input
@@ -85,16 +84,14 @@ class Form extends Component {
           placeholder="Day"
           value={this.props.day}
           required
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
+          onChange={this.props.validateForm}
         />
-        <p className="error">Please choose a day!</p>
+        <p>{this.props.error}</p>
 
-        <button type="submit" onClick={this.props.submitForm}>
+        <button type="submit" onClick={this.props.validateForm}>
           Get my Newspaper
         </button>
-        {/* <p className="error">Please fill in the missing fields!</p> */}
+        <p className="error">Please fill in the missing fields!</p>
       </form>
     );
   }
