@@ -1,6 +1,65 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userName: '',
+      day: '',
+      month: '',
+      city: '',
+      country: '',
+    }
+  }
+
+  validateForm = (input) => {
+    return {
+
+    }
+    const targetName = e.target.name;
+    const targetVal = e.target.value; 
+
+    if (input) != '' {
+      //proceed
+    } else {
+      //show error
+    }
+  }
+
+    handleChange = (e) => {
+    //store values as variables to use later (so it's cleaner)
+    //target name of element so we know which one is being changed and then grab its value at the same time
+    const targetName = e.target.name; // month
+    const targetVal = e.target.value; // 11
+
+    this.setState({
+      //set the state of whatever is being changed to the associated value
+      [targetName]: targetVal,
+    });
+  };
+
+  submitForm = e => {
+    //prevent default behaviour of submit button
+    e.preventDefault();
+    
+    //call API and dynamically insert month and name values from state
+    axios({
+      url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+      method: 'GET'
+    }).then(response => {
+      this.setState({
+        historialFact: response.data,
+        isLoading: false,
+      })
+    });
+    
+    //change showResult to true for conditional rendering
+    this.setState({
+      showForm: false,
+      showResult: true,
+    });
+  };
+
   render() {
     return (
       <form action="" className="historicalFact">
