@@ -5,12 +5,13 @@ import "./App.css";
 
 class App extends Component {
   constructor() {
-    console.log("constructor called");
     super();
     this.state = {
       userName: "",
-      day: null,
-      month: null,
+      day: "",
+      month: "",
+      city: "",
+      country: "",
       historialFact: "",
       isLoading: true,
       result: false
@@ -26,9 +27,9 @@ class App extends Component {
     // Target name of element first so we know which one is being changed and then grab its value and set the name = value
     const targetName = e.target.name; // month
     const targetVal = e.target.value; // 11
-    console.log(targetVal);
+
     this.setState({
-      //set the state of the whatever is being changed to the associated value
+      //set the state of whatever is being changed to the associated value
       [targetName]: targetVal
     });
   };
@@ -54,11 +55,12 @@ class App extends Component {
 
   resetForm = () => {
     //reset all values to original empty state
-    console.log(`reset form clicked`);
     this.setState({
       userName: "",
-      day: null,
-      month: null,
+      day: "",
+      month: "",
+      city: "",
+      country: "",
       historialFact: "",
       isLoading: true,
       result: false
@@ -66,28 +68,53 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <Fragment>
         <form action="" className="historicalFact">
           <label htmlFor="userName">What's your full name?</label>
           <input
             type="text"
-            id="userName"
             name="userName"
+            id="userName"
             placeholder="Enter your full name here"
+            value={this.state.userName}
+            required
             onChange={this.handleChange}
           />
-          
+
+          <legend>Where were you born?</legend>
+          <label htmlFor="city">City</label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Enter your City here"
+            value={this.state.city}
+            required
+            onChange={this.handleChange}
+          />
+          <label htmlFor="country">Country</label>
+          <input
+            type="text"
+            name="country"
+            id="country"
+            placeholder="Enter your Country here"
+            value={this.state.country}
+            required
+            onChange={this.handleChange}
+          />
+
           <legend>When's your birthday?</legend>
           <label htmlFor="month">Month</label>
           <select
             id="month"
             name="month"
-            placeholder="day"
-            defaultValue={this.state.month}
+            placeholder="month"
+            value={this.state.month}
+            required
             onChange={this.handleChange}
           >
+            <option>Month</option>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -108,8 +135,9 @@ class App extends Component {
             max="31"
             id="day"
             name="day"
-            placeholder="day"
-            defaultValue={this.state.day}
+            placeholder="Day"
+            value={this.state.day}
+            required
             onChange={this.handleChange}
           />
           {/* ADD THIS LATER WHEN CALLING NYTIMES API <label htmlFor="year">Day</label>
@@ -118,8 +146,8 @@ class App extends Component {
             Get my Newspaper
           </button>
         </form>
-        
-        {this.state.result &&
+
+        {this.state.result && (
           <div className="newspaper">
             {this.state.isLoading ? (
               <p>Generating your custom newspaper...</p>
@@ -127,13 +155,15 @@ class App extends Component {
               <Newspaper
                 fact={this.state.historialFact}
                 name={this.state.userName}
+                city={this.state.city}
+                country={this.state.country}
               />
             )}
             <button type="reset" onClick={this.resetForm}>
               Get Another Newspaper
             </button>
           </div>
-        }
+        )}
       </Fragment>
     );
   }
