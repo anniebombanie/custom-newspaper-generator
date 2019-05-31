@@ -1,5 +1,6 @@
 import React, {Component, Fragment } from 'react';
 import axios from 'axios';
+import Form from './components/Form.js'
 import Newspaper from './components/Newspaper.js';
 import './App.css';
 
@@ -15,11 +16,12 @@ class App extends Component {
       historialFact: '',
       newspaperName: ['Times', 'Tribute', 'Star', 'Daily', 'Post', 'Tribune', 'Mirror', 'News', 'Journal', 'Press', 'Chronicle', 'Courier', 'Reporter', 'Herald'],
       isLoading: true,
-      showResult: false
+      showForm: true,
+      showResult: false,
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     // Store values as variables to use later (so it's cleaner)
     // Target name of element first so we know which one is being changed and then grab its value and set the name = value
     const targetName = e.target.name; // month
@@ -27,7 +29,7 @@ class App extends Component {
 
     this.setState({
       //set the state of whatever is being changed to the associated value
-      [targetName]: targetVal
+      [targetName]: targetVal,
     });
   };
 
@@ -46,7 +48,8 @@ class App extends Component {
     });
     //change showResult to true for conditional rendering
     this.setState({
-      showResult: true
+      showForm: false,
+      showResult: true,
     });
   };
 
@@ -61,93 +64,27 @@ class App extends Component {
       historialFact: '',
       newspaperName: ['Times', 'Tribute', 'Star', 'Daily', 'Post', 'Tribune', 'Mirror', 'News', 'Journal', 'Press', 'Chronicle', 'Courier', 'Reporter', 'Herald'],
       isLoading: true,
-      showResult: false
+      showResult: false,
     });
   };
 
   render() {
     return (
       <Fragment>
-      <h1>Custom Newspaper Generator</h1>
-        <form action='' className='historicalFact'>
-          <label htmlFor='userName'>What's your full name?</label>
-          <input
-            type='text'
-            name='userName'
-            id='userName'
-            placeholder='Enter your full name here'
-            value={this.state.userName}
-            required
-            onChange={this.handleChange}
-          />
-
-          <legend>Where were you born?</legend>
-          <label htmlFor='city'>City</label>
-          <input
-            type='text'
-            name='city'
-            id='city'
-            placeholder='Enter your City here'
-            value={this.state.city}
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor='country'>Country</label>
-          <input
-            type='text'
-            name='country'
-            id='country'
-            placeholder='Enter your Country here'
-            value={this.state.country}
-            required
-            onChange={this.handleChange}
-          />
-
-          <legend>When's your birthday?</legend>
-          <label htmlFor='month'>Month</label>
-          <select
-            id='month'
-            name='month'
-            placeholder='month'
-            value={this.state.month}
-            required
-            onChange={this.handleChange}
-          >
-            <option>Month</option>
-            <option value='1'>January</option>
-            <option value='2'>February</option>
-            <option value='3'>March</option>
-            <option value='4'>April</option>
-            <option value='5'>May</option>
-            <option value='6'>June</option>
-            <option value='7'>July</option>
-            <option value='8'>August</option>
-            <option value='9'>September</option>
-            <option value='10'>October</option>
-            <option value='11'>November</option>
-            <option value='12'>December</option>
-          </select>
-          <label htmlFor='day'>Day</label>
-          <input
-            type='number'
-            min='1'
-            max='31'
-            id='day'
-            name='day'
-            placeholder='Day'
-            value={this.state.day}
-            required
-            onChange={this.handleChange}
-          />
-          {/* ADD THIS LATER WHEN CALLING NYTIMES API <label htmlFor='year'>Day</label>
-          <input type='number' min='1900' max='2019' id='year' /> */}
-          <button type='submit' onClick={this.submitForm}>
-            Get my Newspaper
-          </button>
-        </form>
+        <h1>Custom Newspaper Generator</h1>
+        <Form
+          userName={this.state.userName}
+          day={this.state.day}
+          month={this.state.month}
+          city={this.state.city}
+          country={this.state.country}
+          handleChange={this.handleChange}
+          submitForm={this.submitForm}
+          resetForm={this.resetForm}
+        />
 
         {this.state.showResult && (
-          <div className='newspaper'>
+          <div className="newspaper">
             {this.state.isLoading ? (
               <p>Generating your custom newspaper...</p>
             ) : (
@@ -158,7 +95,7 @@ class App extends Component {
                 country={this.state.country}
               />
             )}
-            <button type='reset' onClick={this.resetForm}>
+            <button type="reset" onClick={this.resetForm}>
               Get Another Newspaper
             </button>
           </div>
