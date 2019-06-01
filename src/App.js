@@ -2,7 +2,7 @@ import React, {Component, Fragment } from 'react';
 import axios from 'axios';
 import Form from './components/Form.js'
 import Newspaper from './components/Newspaper.js';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   constructor() {
@@ -24,11 +24,11 @@ class App extends Component {
   handleChange = (e) => {
     //store values as variables to use later (so it's cleaner)
     //target name of element so we know which one is being changed and then grab its value at the same time
-    const targetName = e.target.name; // month
-    const targetVal = e.target.value; // 11
+    const targetName = e.target.name;
+    const targetVal = e.target.value;
 
     this.setState({
-      //set the state of whatever is being changed to the associated value
+      //set the state of whatever is being changed to associated value
       [targetName]: targetVal
     });
   };
