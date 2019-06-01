@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/App.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import WebFont from 'webfontloader';
+WebFont.load({
+  google: {
+    families: ['Abril Fatface', 'cursive','UnifrakturCook', 'cursive','Sorts Mill Goudy:400, 400i', 'serif']
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

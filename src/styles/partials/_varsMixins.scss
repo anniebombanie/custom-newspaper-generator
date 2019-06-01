@@ -1,0 +1,42 @@
+// VARIABLES
+$font-headline: 'UnifrakturCook', cursive;
+$font-title: 'Abril Fatface', cursive;
+$font-body: 'Sorts Mill Goudy', serif;
+
+// MIXINS
+@mixin flex($direction, $wrap, $justify, $align) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin position ($pos, $top, $right, $bottom, $left) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin box-shadow ($x, $y, $color) {
+  box-shadow: $x $y $color;
+}
+
+@mixin text-shadow ($x, $y, $color) {
+  text-shadow: $x $y $color;
+}
+
+//Thanks to https://thoughtbot.com/blog/sasss-content-directive
+@mixin media($width) {
+  @media (min-width: $width) {
+    @content;
+  }  
+}
+
+@mixin media-height($width) {
+  @media (min-height: $width) {
+    @content;
+  }  
+}

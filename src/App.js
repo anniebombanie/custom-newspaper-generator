@@ -11,6 +11,7 @@ class App extends Component {
       userName: "",
       day: "",
       month: "",
+      year: "",
       city: "",
       country: "",
       historialFact: "",
@@ -139,6 +140,7 @@ class App extends Component {
           userName={this.state.userName}
           day={this.state.day}
           month={this.state.month}
+          year={this.state.year}
           city={this.state.city}
           country={this.state.country}
           handleChange={this.handleChange}
@@ -154,9 +156,12 @@ class App extends Component {
               <p>Generating your custom newspaper...</p>
             ) : (
               <Newspaper
-                fact={this.state.historialFact}
                 name={this.state.userName}
                 city={this.state.city}
+                day={this.state.day}
+                month={this.state.month}
+                year={this.state.year}
+                fact={this.state.historialFact}
                 country={this.state.country}
                 getRandomItem={this.getRandomItem}
                 newspaperTitle={this.state.newspaperTitle}

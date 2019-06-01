@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 firebase
+
+./styles/App.css.map
+./styles/App.min.css.map

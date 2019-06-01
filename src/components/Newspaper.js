@@ -13,6 +13,7 @@ class Newspaper extends Component {
       <Fragment>
         <h2>The {this.props.city} {this.props.getRandomItem(this.state.newspaperTitle)}</h2>
         <h3>{this.props.country}'s no.1 Newspaper</h3>
+        <p>{this.props.day}, {this.props.month}, {this.props.year}</p>
         <div className='historicalFact'>
           <h4>Same Day, Another Year</h4>
           <p>{this.props.fact}</p>

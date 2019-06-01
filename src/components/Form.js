@@ -63,7 +63,7 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         >
-          <option>Month</option>
+          <option value="">Month</option>
           <option value="1">January</option>
           <option value="2">February</option>
           <option value="3">March</option>
@@ -94,6 +94,19 @@ class Form extends Component {
           }}
         />
         {/* <p className="error">Please choose a day!</p> */}
+
+        <label htmlFor="year">Year</label>
+        <input
+          type="number"
+          id="year"
+          name="year"
+          placeholder="Year"
+          value={this.props.year}
+          required
+          onChange={e => {
+            this.props.handleChange(e);
+          }}
+        />
 
         <input type="submit" value="Get my Newspaper" />
 

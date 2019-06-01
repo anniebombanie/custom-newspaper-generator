@@ -1,0 +1,53 @@
+// GLOBAL
+
+html {
+	font-size: 125%;
+  scroll-behavior: smooth;
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  font-family: $font-body;
+  background-color: #fff;
+  // font-size: rem-calc(22px);
+  margin: 0;
+
+  // @include media (454px) {
+  //   font-size: rem-calc(24px);
+  // }
+}
+
+img {
+	display: block;
+	width: 100%;
+	min-width: 100%;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  //so background img will never go on top
+  z-index: 10;
+}
+
+.container,
+header {
+  height: 100%;
+  min-height: 100vh;
+  // @include flex-center;
+}
+
+p,
+label,
+.legend {
+  line-height: 1.3;
+}
+
+h1 {
+  font-family: $font-headline;
+}
