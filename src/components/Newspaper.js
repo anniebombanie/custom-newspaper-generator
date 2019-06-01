@@ -19,7 +19,7 @@ class Newspaper extends Component {
         </div>
         <div className='baby'>
           <h4>World's Cutest Baby Born!</h4>
-          <p>Scientists are astounded by the birth of {this.props.name}. "Cutest baby I've ever seen in my life!" gushes a besotted nurse. Parents are doing well.</p>
+          <p>Doctor's are astounded by the birth of {this.props.name}. "Cutest baby I've ever seen in my life!" gushes a besotted nurse. Parents are doing well.</p>
         </div>
       </Fragment>
     )

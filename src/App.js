@@ -17,7 +17,7 @@ class App extends Component {
       isLoading: true,
       // showForm: true,
       showResult: false,
-      error: '',
+      // error: '',
     };
   }
 
