@@ -15,7 +15,7 @@ class App extends Component {
       country: "",
       historialFact: "",
       isLoading: true,
-      showForm: true,
+      // showForm: true,
       showResult: false,
       error: '',
     };
@@ -33,20 +33,20 @@ class App extends Component {
     });
   };
 
-  validateForm = (userInput) => {
-    // get the value of each input
-    // check if these values are what you want
-    // if they ALL are, this.submitForm();
-    // otherwise, showIndividualError()
+  // validateForm = (userInput) => {
+  //   // get the value of each input
+  //   // check if these values are what you want
+  //   // if they ALL are, this.submitForm();
+  //   // otherwise, showIndividualError()
 
 
-    if (!this.error) {
-      this.submitForm()
-    } else {
-      this.setState({
-        error: "Please input your full name!"
-      });
-    }
+  //   if (!this.error) {
+  //     this.submitForm()
+  //   } else {
+  //     this.setState({
+  //       error: "Please input your full name!"
+  //     });
+  //   }
 
 
     //=================================
@@ -85,14 +85,14 @@ class App extends Component {
     //       })
     //       : '',
     //   )
-  };
+  // };
   
 
   submitForm = e => {
     //prevent default behaviour of submit button
     e.preventDefault();
 
-    //call API and dynamically insert month and name values from state
+    //call API and dynamically insert month/name values from state
     axios({
       url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
       method: "GET"
@@ -103,21 +103,22 @@ class App extends Component {
       });
     });
 
-    //change showResult to true for conditional rendering
+    //change states for conditional rendering to display result
     this.setState({
-      showForm: false,
+      // showForm: false,
       showResult: true
     });
   };
 
   getRandomItem = arr => {
+    //get the value of a random index
     const randomIndex = Math.floor(Math.random() * arr.length);
     const randomItem = arr[randomIndex];
     return randomItem;
   };
 
   resetForm = () => {
-    //reset all values to original empty state
+    //reset all values
     this.setState({
       userName: "",
       day: "",
@@ -141,10 +142,10 @@ class App extends Component {
           city={this.state.city}
           country={this.state.country}
           handleChange={this.handleChange}
-          validateForm={this.validateForm}
-          resetForm={this.resetForm}
-          error={this.state.error}
+          // validateForm={this.validateForm}
+          // error={this.state.error}
           submitForm={this.submitForm}
+          resetForm={this.resetForm}
         />
 
         {this.state.showResult && (

@@ -4,7 +4,11 @@ class Form extends Component {
 
   render() {
     return (
-      <form action="" className="historicalFact">
+      <form
+        action=""
+        className="historicalFact"
+        onSubmit={this.props.submitForm}
+      >
         <label htmlFor="userName">What's your full name?</label>
         <input
           type="text"
@@ -31,7 +35,7 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        <p className="error">Please input your city!</p>
+        {/* <p className="error">Please input your city!</p> */}
 
         <label htmlFor="country">Country</label>
         <input
@@ -45,7 +49,7 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        <p className="error">Please input your country!</p>
+        {/* <p className="error">Please input your country!</p> */}
 
         <legend>When's your birthday?</legend>
         <label htmlFor="month">Month</label>
@@ -73,7 +77,7 @@ class Form extends Component {
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        <p className="error">Please choose a month!</p>
+        {/* <p className="error">Please choose a month!</p> */}
 
         <label htmlFor="day">Day</label>
         <input
@@ -89,11 +93,10 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        <p className="error">Please choose a day!</p>
+        {/* <p className="error">Please choose a day!</p> */}
 
-        <button type="submit" onClick={this.props.submitForm}>
-          Get my Newspaper
-        </button>
+        <input type="submit" value="Get my Newspaper" />
+
         {/* <p className="error">Please fill in the missing fields!</p> */}
       </form>
     );
@@ -101,5 +104,3 @@ class Form extends Component {
 }
 
 export default Form
-
-// onClick={(e) => {this.props.submitForm(e)}}

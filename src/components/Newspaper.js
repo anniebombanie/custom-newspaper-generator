@@ -4,7 +4,7 @@ class Newspaper extends Component {
   constructor() {
     super();
     this.state = {
-      newspaperTitle: ['Times', 'Tribute', 'Star', 'Daily', 'Post', 'Tribune', 'Mirror', 'News', 'Journal', 'Press', 'Chronicle', 'Courier', 'Reporter', 'Herald'],
+      newspaperTitle: ['Times', 'Tribute', 'Star', 'Daily', 'Post', 'Tribune', 'Mirror', 'News', 'Journal', 'Press', 'Chronicle', 'Courier', 'Reporter', 'Herald', 'Bulletin'],
     }
   }
 
