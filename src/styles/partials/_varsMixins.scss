@@ -1,7 +1,14 @@
 // VARIABLES
-$font-headline: 'UnifrakturCook', cursive;
-$font-title: 'Abril Fatface', cursive;
-$font-body: 'Sorts Mill Goudy', serif;
+$f-logo: 'Rye', 'cursive';
+$f-headline: 'UnifrakturCook', cursive;
+$f-title: 'Abril Fatface', cursive;
+$f-body: 'Vollkorn', serif;
+
+$white: #FDFDFD;
+$grey: #AAA5A2;
+$black: #0B0906;
+$white: #F7F7F7;
+
 
 // MIXINS
 @mixin flex($direction, $wrap, $justify, $align) {
@@ -39,4 +46,47 @@ $font-body: 'Sorts Mill Goudy', serif;
   @media (min-height: $width) {
     @content;
   }  
+}
+
+// ULTIMATE PX TO REM CONVERTER
+//Adopted from https://45royale.com/blog/convert-pixels-to-rems/
+
+$global-font-size: 100% !default;
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+  //If no base is defined, defer to the global font size
+  @if $base == null {
+    $base: $global-font-size;
+  } @if unit($base) == '%' {
+    $base: ($base / 100%) * 20px;
+  } // Using rem as base allows correct scaling
+  @if unit($base) == 'rem' {
+    $base: strip-unit($base) * 20px;
+  } @if $count == 1 {
+    @return -to-rem($values, $base);
+  } @for $i from 1 through $count {
+    $rem-values: append($rem-values, -to-rem(nth($values, $i), $base));
+  } @return $rem-values;
+}
+
+@function -to-rem($value, $base: null) {
+  // Check if the value is a number
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  } // Transform em into rem if someone hands over 'em's
+  @if unit($value) == 'em' {
+    $value: strip-unit($value) * 1rem;
+  } // Calculate rem if units for $value is not rem or em
+  @if unit($value) != 'rem' {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  } // Turn 0rem into 0
+  @if $value == 0rem {
+    $value: 0;
+  } @return $value;
 }

@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import WebFont from 'webfontloader';
 WebFont.load({
   google: {
-    families: ['Abril Fatface', 'cursive','UnifrakturCook', 'cursive','Sorts Mill Goudy:400, 400i', 'serif']
+    families: ['Rye', 'cursive', 'Vollkorn:400, 400i', 'serif', 'Abril Fatface', 'cursive', 'UnifrakturCook', 'cursive']
   }
 });
 

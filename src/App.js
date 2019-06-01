@@ -1,5 +1,6 @@
-import React, {Component, Fragment } from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
+import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Newspaper from './components/Newspaper.js';
 import './styles/App.css';
@@ -134,8 +135,9 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <h1>Custom Newspaper Generator</h1>
+      <div className="wrapper">
+        <div className="vignette"></div>
+        <Header />
         <Form
           userName={this.state.userName}
           day={this.state.day}
@@ -172,7 +174,7 @@ class App extends Component {
             </button>
           </div>
         )}
-      </Fragment>
+      </div>
     );
   }
 }

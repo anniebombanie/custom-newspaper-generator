@@ -1,20 +1,13 @@
-// GLOBAL
-
 html {
 	font-size: 125%;
   scroll-behavior: smooth;
 }
 
-.App {
-  text-align: center;
-}
-
 body {
-  font-family: $font-body;
-  background-color: #fff;
-  // font-size: rem-calc(22px);
+  font-family: $f-body;
   margin: 0;
-
+  background: $white;
+  text-align: center;
   // @include media (454px) {
   //   font-size: rem-calc(24px);
   // }
@@ -26,13 +19,21 @@ img {
 	min-width: 100%;
 }
 
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 10em $grey;
+  z-index: -10;
+} 
+
 .wrapper {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  //so background img will never go on top
-  z-index: 10;
 }
 
 .container,
@@ -49,5 +50,5 @@ label,
 }
 
 h1 {
-  font-family: $font-headline;
+  font-family: $f-logo;
 }
