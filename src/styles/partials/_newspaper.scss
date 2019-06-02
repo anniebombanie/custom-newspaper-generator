@@ -1,14 +1,15 @@
 .newspaper {
   background-color: $white;
   padding: 1rem .5rem;
-  @include box-shadow(1px, 1px, 10px, 2px, $grey);
+  margin: 2rem auto;
+  box-shadow: 1px, 1px, 10px, 2px, $grey;
 
   p {
     text-align: justify;
   }
   
   h2 {
-  font-family: $f-npTitle;
+  font-family: $f-blackletter;
   font-size: 3rem;
   line-height: 1;
   margin: 0;
@@ -21,7 +22,7 @@
 
   h3,
   h4 {
-    font-family: $f-storyTitle;
+    font-family: $f-fatface;
   }
 
   h3 {
@@ -38,6 +39,7 @@
     border-bottom: 1px solid $black;
     p {
       margin: .4rem 0;
+      text-align: center;
     }
   }
 }

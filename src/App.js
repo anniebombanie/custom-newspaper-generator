@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import Header from './components/Header.js'
 import Form from './components/Form.js'
@@ -35,11 +35,11 @@ class App extends Component {
     });
   };
 
-  // validateForm = (userInput) => {
-  //   // get the value of each input
-  //   // check if these values are what you want
-  //   // if they ALL are, this.submitForm();
-  //   // otherwise, showIndividualError()
+  validateForm = (userInput) => {
+    // get the value of each input
+    // check if these values are what you want
+    // if they ALL are, this.submitForm();
+    // otherwise, showIndividualError()
 
 
   //   if (!this.error) {
@@ -54,40 +54,8 @@ class App extends Component {
     //=================================
 
 
-    // !this.error
-    //   ? this.submitForm()
-    //   : (
-    //     !this.state.userName
-    //     ? this.setState ({
-    //       error: 'Please input your full name!'
-    //     })
-    //     : '',
-
-    //     !this.state.day
-    //       ? this.setState({
-    //         error: 'Please input a day!'
-    //       })
-    //       : '',
-
-    //     !this.state.month
-    //       ? this.setState({
-    //         error: 'Please choose a month!'
-    //       })
-    //       : '',
-
-    //     !this.state.city
-    //       ? this.setState({
-    //         error: 'Please input your city of birth!'
-    //       })
-    //       : '',
-
-    //     !this.state.country
-    //       ? this.setState({
-    //         error: 'Please input your country of birth!'
-    //       })
-    //       : '',
-    //   )
-  // };
+  
+  };
   
 
   submitForm = e => {
@@ -157,7 +125,7 @@ class App extends Component {
             {this.state.isLoading ? (
               <p>Generating your custom newspaper...</p>
             ) : (
-              <Fragment>
+              <div>
                 <Newspaper
                   name={this.state.userName}
                   city={this.state.city}
@@ -170,9 +138,9 @@ class App extends Component {
                   newspaperTitle={this.state.newspaperTitle}
                 />
                 <button type="reset" onClick={this.resetForm}>
-                  Get Another Newspaper
+                  Another Newspaper
                 </button>
-              </Fragment>
+              </div>
             )}
           </div>
         )}
