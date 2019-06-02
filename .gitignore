@@ -24,5 +24,7 @@ yarn-error.log*
 
 firebase
 
-./styles/App.css.map
-./styles/App.min.css.map
+./src/styles/App.css.map
+./src/styles/App.min.css.map
+
+./src/assets/logoCog.svg

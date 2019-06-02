@@ -1,5 +1,24 @@
-.logo-cog {
-  width: rem-calc(50px);
+.containerLogo {
+  margin-top: 1rem;
+  position: relative;
+  &::before {
+    content: '';
+    width: 115px;
+    height: 23px;
+    background: url('./../assets/logoLinesL.svg') no-repeat left center;
+    @include position(absolute, 19px, null, null, 0);
+  }
+  &::after {
+    content: '';
+    width: 115px;
+    height: 23px;
+    background: url('./../assets/logoLinesR.svg') no-repeat right center;
+    @include position(absolute, 19px, 0, null, null);
+  }
+}
+
+.logoCog {
+  height: rem-calc(60px);
   animation: rotation 30s infinite linear;
 }
 
@@ -8,28 +27,14 @@
   to {transform: rotate(360deg)}
 }
 
-.logo-lines {
-  margin: 0 auto;
-  position: relative;
-  width: rem-calc(300px);
-  height: rem-calc(2px);
-  background: $black;
+h1 {
+  font-family: $f-logo;
+  margin-top: .5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $black;
+}
 
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: rem-calc(300px);
-    height: rem-calc(2px);
-    background: $black;
-  }
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: rem-calc(300px);
-    height: rem-calc(2px);
-    background: $black;
-  }
+p:last-of-type {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $black;
 }

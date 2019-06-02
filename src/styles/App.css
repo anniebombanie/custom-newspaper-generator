@@ -213,13 +213,7 @@ img {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.container,
-header {
-  height: 100%;
-  min-height: 100vh;
+  padding: 0 .5rem;
 }
 
 p,
@@ -228,12 +222,33 @@ label,
   line-height: 1.3;
 }
 
-h1 {
-  font-family: "Rye", "cursive";
+.containerLogo {
+  margin-top: 1rem;
+  position: relative;
 }
 
-.logo-cog {
-  width: 2.5rem;
+.containerLogo::before {
+  content: '';
+  width: 115px;
+  height: 23px;
+  background: url("./../assets/logoLinesL.svg") no-repeat left center;
+  position: absolute;
+  top: 19px;
+  left: 0;
+}
+
+.containerLogo::after {
+  content: '';
+  width: 115px;
+  height: 23px;
+  background: url("./../assets/logoLinesR.svg") no-repeat right center;
+  position: absolute;
+  top: 19px;
+  right: 0;
+}
+
+.logoCog {
+  height: 3rem;
   -webkit-animation: rotation 30s infinite linear;
           animation: rotation 30s infinite linear;
 }
@@ -260,30 +275,16 @@ h1 {
   }
 }
 
-.logo-lines {
-  margin: 0 auto;
-  position: relative;
-  width: 15rem;
-  height: 0.1rem;
-  background: #0B0906;
+h1 {
+  font-family: "Rye", "cursive";
+  margin-top: .5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #0B0906;
 }
 
-.logo-lines::before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 15rem;
-  height: 0.1rem;
-  background: #0B0906;
-}
-
-.logo-lines::after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 15rem;
-  height: 0.1rem;
-  background: #0B0906;
+p:last-of-type {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #0B0906;
 }
 
 /* ===== IMAGE CREDITS ===== 
