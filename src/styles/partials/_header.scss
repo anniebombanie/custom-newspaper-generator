@@ -1,4 +1,5 @@
 .logo-cog {
+  width: rem-calc(50px);
   animation: rotation 30s infinite linear;
 }
 
@@ -8,11 +9,27 @@
 }
 
 .logo-lines {
-  width: ;
-  height: ;
+  margin: 0 auto;
+  position: relative;
+  width: rem-calc(300px);
+  height: rem-calc(2px);
   background: $black;
-  &:before {
-    content: '',
-    
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: rem-calc(300px);
+    height: rem-calc(2px);
+    background: $black;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: rem-calc(300px);
+    height: rem-calc(2px);
+    background: $black;
   }
 }

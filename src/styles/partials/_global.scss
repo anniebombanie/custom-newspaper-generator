@@ -8,6 +8,7 @@ body {
   margin: 0;
   background: $white;
   text-align: center;
+  overflow-x: hidden;
   // @include media (454px) {
   //   font-size: rem-calc(24px);
   // }

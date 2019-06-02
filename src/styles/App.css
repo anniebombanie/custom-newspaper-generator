@@ -189,6 +189,7 @@ body {
   margin: 0;
   background: #F7F7F7;
   text-align: center;
+  overflow-x: hidden;
 }
 
 img {
@@ -232,6 +233,7 @@ h1 {
 }
 
 .logo-cog {
+  width: 2.5rem;
   -webkit-animation: rotation 30s infinite linear;
           animation: rotation 30s infinite linear;
 }
@@ -256,6 +258,32 @@ h1 {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.logo-lines {
+  margin: 0 auto;
+  position: relative;
+  width: 15rem;
+  height: 0.1rem;
+  background: #0B0906;
+}
+
+.logo-lines::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15rem;
+  height: 0.1rem;
+  background: #0B0906;
+}
+
+.logo-lines::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15rem;
+  height: 0.1rem;
+  background: #0B0906;
 }
 
 /* ===== IMAGE CREDITS ===== 
