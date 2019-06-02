@@ -6,7 +6,6 @@ class Form extends Component {
     return (
       <form
         action=""
-        className="historicalFact"
         onSubmit={this.props.submitForm}
       >
         <label htmlFor="userName">What's your full name?</label>
