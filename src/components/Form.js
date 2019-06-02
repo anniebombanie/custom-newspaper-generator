@@ -11,15 +11,15 @@ class Form extends Component {
         <label htmlFor="user-name">What's your full name?</label>
         <input
           type="text"
-          name="userName"
-          id="userName"
+          name="name"
+          id="name"
           placeholder="Enter your full name here"
-          value={this.props.userName}
-          required
+          value={this.props.name}
           onChange={e => {
             this.props.handleChange(e);
           }}
         />
+        {this.props.errors.name && <p className="error">Please enter your name!</p>}
 
         <legend>Where were you born?</legend>
         <label htmlFor="city">City</label>
@@ -29,12 +29,11 @@ class Form extends Component {
           id="city"
           placeholder="Enter your City here"
           value={this.props.city}
-          required
           onChange={e => {
             this.props.handleChange(e);
           }}
         />
-        {/* <p className="error">Please input your city!</p> */}
+        {this.props.errors.city && <p className="error">Please input your city!</p>}
 
         <label htmlFor="country">Country</label>
         <input
@@ -43,12 +42,11 @@ class Form extends Component {
           id="country"
           placeholder="Enter your Country here"
           value={this.props.country}
-          required
           onChange={e => {
             this.props.handleChange(e);
           }}
         />
-        {/* <p className="error">Please input your country!</p> */}
+        {this.props.errors.country && <p className="error">Please input your country!</p>}
 
         <legend>When's your birthday?</legend>
         <label htmlFor="month">Month</label>
@@ -57,7 +55,6 @@ class Form extends Component {
           name="month"
           placeholder="month"
           value={this.props.month}
-          required
           onChange={e => {
             this.props.handleChange(e);
           }}
@@ -76,7 +73,7 @@ class Form extends Component {
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        {/* <p className="error">Please choose a month!</p> */}
+        {this.props.errors.month && <p className="error">Please choose a month!</p>}
 
         <label htmlFor="day">Day</label>
         <input
@@ -87,12 +84,11 @@ class Form extends Component {
           name="day"
           placeholder="Day"
           value={this.props.day}
-          required
           onChange={e => {
             this.props.handleChange(e);
           }}
         />
-        {/* <p className="error">Please choose a day!</p> */}
+        {this.props.errors.day && <p className="error">Please choose a day!</p>}
 
         <label htmlFor="year">Year</label>
         <input
@@ -101,15 +97,16 @@ class Form extends Component {
           name="year"
           placeholder="Year"
           value={this.props.year}
-          required
           onChange={e => {
             this.props.handleChange(e);
           }}
         />
+        {this.props.errors.year && <p className="error">Please enter your year!</p>}
 
         <input type="submit" value="Get my Newspaper" />
 
-        {/* <p className="error">Please fill in the missing fields!</p> */}
+        {Object.values(this.props.errors).some(err => err) 
+          && <p className="error">Please fill in the missing fields!</p>}
       </form>
     );
   }

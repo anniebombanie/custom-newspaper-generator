@@ -5,11 +5,41 @@ import Form from './components/Form.js'
 import Newspaper from './components/Newspaper.js';
 import './styles/App.css';
 
+
+// Set of validator functions to return boolean
+const validateText = text => {
+  return !!text.trim().length;
+}
+
+const validateDay = day => {
+  return false;
+};
+
+const validateMonth = month => {
+//return result of testing rejex on string
+  return false;
+};
+
+const validateYear = year => {
+  //if userInout doesn't match regex, return false
+  return /^\d{4}$/;
+};
+
+//mapping form fields to validator functions
+const formValidators = {
+  name: validateText,
+  day: validateDay,
+  month: validateMonth,
+  year: validateYear,
+  city: validateText,
+  country: validateText,
+};
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      userName: "",
+      name: "",
       day: "",
       month: "",
       year: "",
@@ -17,9 +47,8 @@ class App extends Component {
       country: "",
       historialFact: "",
       isLoading: true,
-      // showForm: true,
       showResult: false,
-      // error: '',
+      errors: {}
     };
   }
 
@@ -29,38 +58,51 @@ class App extends Component {
     const targetName = e.target.name;
     const targetVal = e.target.value;
 
+    //Getting validator function from map 
+    const validator = formValidators[targetName];
+    console.log('VALIDATING')
     this.setState({
-      //set the state of whatever is being changed to associated value
-      [targetName]: targetVal
+      [targetName]: targetVal,
     });
+
+    //after update field, validate the field and see if return false
+    if (!validator(targetVal)) {
+      //if false, set error form field to true
+      this.setState({
+        errors: {
+          ...this.state.errors,
+          [targetName]: true,
+        }
+      });
+    }   
   };
 
-  validateForm = (userInput) => {
+  validateForm = (state) => {
     // get the value of each input
     // check if these values are what you want
     // if they ALL are, this.submitForm();
     // otherwise, showIndividualError()
 
-
-  //   if (!this.error) {
-  //     this.submitForm()
-  //   } else {
-  //     this.setState({
-  //       error: "Please input your full name!"
-  //     });
-  //   }
-
-
-    //=================================
-
-
-  
+    // return errors object for whole form
+    return {
+      name: !validateText(state.name),
+      day: !validateDay(state.day),
+      month: !validateMonth(state.month),
+      year: !validateYear(state.year),
+      city: !validateText(state.city),
+      country: !validateText(state.country),
+    };
   };
   
 
   submitForm = e => {
     //prevent default behaviour of submit button
     e.preventDefault();
+
+    const resultFormValidation = this.validateForm(this.state);
+    console.log(resultFormValidation);
+    this.setState({ errors: resultFormValidation });
+    // set state.errors to reflect results of validation
 
     //call API and dynamically insert month/name values from state
     axios({
@@ -90,7 +132,7 @@ class App extends Component {
   resetForm = () => {
     //reset all values
     this.setState({
-      userName: "",
+      name: "",
       day: "",
       month: "",
       city: "",
@@ -107,15 +149,14 @@ class App extends Component {
         <div className="vignette"></div>
         <Header />
         <Form
-          userName={this.state.userName}
+          errors={this.state.errors}
+          name={this.state.name}
           day={this.state.day}
           month={this.state.month}
           year={this.state.year}
           city={this.state.city}
           country={this.state.country}
           handleChange={this.handleChange}
-          // validateForm={this.validateForm}
-          // error={this.state.error}
           submitForm={this.submitForm}
           resetForm={this.resetForm}
         />
@@ -127,7 +168,7 @@ class App extends Component {
             ) : (
               <div>
                 <Newspaper
-                  name={this.state.userName}
+                  name={this.state.name}
                   city={this.state.city}
                   day={this.state.day}
                   month={this.state.month}
