@@ -88,7 +88,7 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.day && <p className="error">Please choose a day!</p>}
+        {this.props.errors.day && <p className="error">Please enter a day!</p>}
 
         <label htmlFor="year">Year</label>
         <input

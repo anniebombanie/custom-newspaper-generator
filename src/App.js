@@ -7,32 +7,34 @@ import './styles/App.css';
 
 
 // Set of validator functions to return boolean
-const validateText = text => {
+const validText = text => {
   return !!text.trim().length;
 }
 
-const validateDay = day => {
-  return false;
+const validDay = day => {
+  if (typeof(Number(day)) === "number" && day >= 1 && day  <= 31) {
+    return true;
+  };
 };
 
-const validateMonth = month => {
-//return result of testing rejex on string
-  return false;
+const validMonth = month => {
+  return month;
 };
 
-const validateYear = year => {
+const validYear = year => {
   //if userInout doesn't match regex, return false
-  return /^\d{4}$/;
+  const workingYear = /^\d{4}$/.test(year);
+  return workingYear;
 };
 
 //mapping form fields to validator functions
 const formValidators = {
-  name: validateText,
-  day: validateDay,
-  month: validateMonth,
-  year: validateYear,
-  city: validateText,
-  country: validateText,
+  name: validText,
+  day: validDay,
+  month: validMonth,
+  year: validYear,
+  city: validText,
+  country: validText,
 };
 
 class App extends Component {
@@ -85,12 +87,12 @@ class App extends Component {
 
     // return errors object for whole form
     return {
-      name: !validateText(state.name),
-      day: !validateDay(state.day),
-      month: !validateMonth(state.month),
-      year: !validateYear(state.year),
-      city: !validateText(state.city),
-      country: !validateText(state.country),
+      name: !validText(state.name),
+      day: !validDay(state.day),
+      month: !validMonth(state.month),
+      year: !validYear(state.year),
+      city: !validText(state.city),
+      country: !validText(state.country),
     };
   };
   
@@ -99,27 +101,46 @@ class App extends Component {
     //prevent default behaviour of submit button
     e.preventDefault();
 
-    const resultFormValidation = this.validateForm(this.state);
-    console.log(resultFormValidation);
-    this.setState({ errors: resultFormValidation });
-    // set state.errors to reflect results of validation
-
-    //call API and dynamically insert month/name values from state
-    axios({
-      url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
-      method: "GET"
-    }).then(response => {
-      this.setState({
-        historialFact: response.data,
-        isLoading: false
-      });
-    });
-
-    //change states for conditional rendering to display result
+    const resultValidateForm = this.validateForm(this.state);
+    console.log(resultValidateForm);
     this.setState({
-      // showForm: false,
-      showResult: true
+      // set state.errors to reflect results of validation
+      errors: resultValidateForm
     });
+
+    // this.errors.every(resultValidateForm === false) && 
+
+    let valid = true
+
+    Object.keys(resultValidateForm).forEach(error => {
+      console.log(error);
+      if (resultValidateForm[error] === true) {
+        valid = false;
+      }
+
+    });
+
+    if (valid) {
+
+      //call API and dynamically insert month/name values from state
+      axios({
+        url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+        method: "GET"
+      }).then(response => {
+        this.setState({
+          historialFact: response.data,
+          isLoading: false
+        });
+      });
+
+      //change states for conditional rendering to display result
+      this.setState({
+        // showForm: false,
+        showResult: true
+      }); 
+
+    }
+    
   };
 
   getRandomItem = arr => {
