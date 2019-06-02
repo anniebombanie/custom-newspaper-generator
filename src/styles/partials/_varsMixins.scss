@@ -31,8 +31,8 @@ $white: #F7F7F7;
   box-shadow: $x $y $color;
 }
 
-@mixin text-shadow ($x, $y, $color) {
-  text-shadow: $x $y $color;
+@mixin text-shadow ($x, $y, $blur, $spread, $color) {
+  text-shadow: $x $y $blur $spread $color;
 }
 
 //Thanks to https://thoughtbot.com/blog/sasss-content-directive
@@ -42,7 +42,7 @@ $white: #F7F7F7;
   }  
 }
 
-@mixin media-height($width) {
+@mixin mediaheight($width) {
   @media (min-height: $width) {
     @content;
   }  

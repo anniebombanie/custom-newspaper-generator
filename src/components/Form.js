@@ -8,7 +8,7 @@ class Form extends Component {
         action=""
         onSubmit={this.props.submitForm}
       >
-        <label htmlFor="userName">What's your full name?</label>
+        <label htmlFor="user-name">What's your full name?</label>
         <input
           type="text"
           name="userName"
