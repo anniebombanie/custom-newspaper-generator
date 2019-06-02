@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 import Header from './components/Header.js'
 import Form from './components/Form.js'
@@ -153,25 +153,27 @@ class App extends Component {
         />
 
         {this.state.showResult && (
-          <div className="newspaper">
+          <div>
             {this.state.isLoading ? (
               <p>Generating your custom newspaper...</p>
             ) : (
-              <Newspaper
-                name={this.state.userName}
-                city={this.state.city}
-                day={this.state.day}
-                month={this.state.month}
-                year={this.state.year}
-                fact={this.state.historialFact}
-                country={this.state.country}
-                getRandomItem={this.getRandomItem}
-                newspaperTitle={this.state.newspaperTitle}
-              />
+              <Fragment>
+                <Newspaper
+                  name={this.state.userName}
+                  city={this.state.city}
+                  day={this.state.day}
+                  month={this.state.month}
+                  year={this.state.year}
+                  fact={this.state.historialFact}
+                  country={this.state.country}
+                  getRandomItem={this.getRandomItem}
+                  newspaperTitle={this.state.newspaperTitle}
+                />
+                <button type="reset" onClick={this.resetForm}>
+                  Get Another Newspaper
+                </button>
+              </Fragment>
             )}
-            <button type="reset" onClick={this.resetForm}>
-              Get Another Newspaper
-            </button>
           </div>
         )}
       </div>
