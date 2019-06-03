@@ -140,16 +140,37 @@ class App extends Component {
 
 
       axios({
-        url: `https://numbersapi.com/${this.state.month}/${
-          this.state.day
-        }/date`,
         method: 'GET',
+        url: 'https://proxy.hackeryou.com',
+        //OR url: 'https://proxy.hackeryou.com',
+        dataResponse: 'json',
+        params: {
+          reqUrl: `https://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+          proxyHeaders: {
+            header_params: 'value',
+          },
+          xmlToJSON: false,
+        },
       }).then(response => {
         this.setState({
           historialFact: response.data,
           isLoading: false,
         });
       });
+
+
+      
+      // axios({
+      //   url: `http://numbersapi.com/${this.state.month}/${
+      //     this.state.day
+      //   }/date`,
+      //   method: 'GET',
+      // }).then(response => {
+      //   this.setState({
+      //     historialFact: response.data,
+      //     isLoading: false,
+      //   });
+      // });
 
       //change states for conditional rendering to display result
       this.setState({

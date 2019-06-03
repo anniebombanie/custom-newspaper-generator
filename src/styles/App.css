@@ -295,6 +295,12 @@ header h1 {
   }
 }
 
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
 .container-logo {
   margin: 1rem auto 0;
   position: relative;
@@ -457,18 +463,31 @@ header h1 {
 }
 
 @media (min-width: 1200px) {
+  .container-intro-content div .container-img,
+  .container-intro-content div .container-txt {
+    width: 100%;
+  }
+}
+
+@media (min-width: 996px) {
+  .container-intro-content div {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
   .container-intro-content {
     width: 50%;
   }
 }
 
-p.hear-ye {
+.container-intro-content p.hear-ye {
   position: relative;
   display: inline-block;
   margin-bottom: 0;
 }
 
-p.hear-ye::before {
+.container-intro-content p.hear-ye::before {
   content: '';
   display: block;
   position: relative;
@@ -481,7 +500,7 @@ p.hear-ye::before {
 }
 
 @media (min-width: 768px) {
-  p.hear-ye::before {
+  .container-intro-content p.hear-ye::before {
     top: 30px;
     left: -20px;
     height: 25px;
@@ -489,14 +508,14 @@ p.hear-ye::before {
 }
 
 @media (min-width: 768px) {
-  p.hear-ye {
+  .container-intro-content p.hear-ye {
     font-size: 1.5rem;
     margin-top: .5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  p.hear-ye {
+  .container-intro-content p.hear-ye {
     margin-top: 2rem;
   }
 }

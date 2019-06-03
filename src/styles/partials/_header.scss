@@ -12,6 +12,9 @@ h1 {
   @include media(768px) {
     font-size: 2.6rem;
     }
+  @include media(1200px) {
+    font-size: 3rem;
+    }
   }
 }
 .container-logo {
@@ -115,12 +118,20 @@ h1 {
         width: 33%;
       }
     }
+    .container-img,
+    .container-txt {
+    @include media(1200px) {
+      width: 100%;
+      }
+    }
+     @include media(996px) {
+       display: block;
+     }
   }
 
   @include media(1200px) {
     width: 50%;
   }
-}
 
 p.hear-ye {
     position: relative;
@@ -151,3 +162,4 @@ p.hear-ye {
       margin-top: 2rem;
     }
   }
+}
