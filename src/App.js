@@ -106,7 +106,6 @@ class App extends Component {
     let valid = true
 
     Object.keys(resultValidateForm).forEach(error => {
-      console.log(error);
       if (resultValidateForm[error] === true) {
         valid = false;
       }

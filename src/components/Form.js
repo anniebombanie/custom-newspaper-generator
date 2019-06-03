@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-
   render() {
     return (
       <form action="" onSubmit={this.props.submitForm}>
@@ -23,104 +22,111 @@ class Form extends Component {
         )}
 
         <legend>Where were you born?</legend>
-        <label htmlFor="city">City</label>
-        <input
-          type="text"
-          name="city"
-          id="city"
-          placeholder="Enter your City here"
-          value={this.props.city}
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
-        />
+        <div>
+          <label htmlFor="city">City</label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Enter your City here"
+            value={this.props.city}
+            onChange={e => {
+              this.props.handleChange(e);
+            }}
+          />
+        </div>
         {this.props.errors.city && (
           <div className="container-error">
             <p>Zounds! Please tell the apparatus your city of birth!</p>
           </div>
         )}
 
-        <label htmlFor="country">Country</label>
-        <input
-          type="text"
-          name="country"
-          id="country"
-          placeholder="Enter your Country here"
-          value={this.props.country}
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
-        />
+        <div>
+          <label htmlFor="country">Country</label>
+          <input
+            type="text"
+            name="country"
+            id="country"
+            placeholder="Enter your Country here"
+            value={this.props.country}
+            onChange={e => {
+              this.props.handleChange(e);
+            }}
+          />
+        </div>
         {this.props.errors.country && (
           <div className="container-error">
-            <p>
-              Uh-oh.. The apparatus needs to know your country of birth to
-              operate!
-            </p>
+            <p>Uh-oh.. The apparatus needs to know your country of birth to operate!</p>
           </div>
         )}
 
         <legend>When's your birthday?</legend>
-        <label htmlFor="month">Month</label>
-        <select
-          id="month"
-          name="month"
-          placeholder="month"
-          value={this.props.month}
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
-        >
-          <option value="">Month</option>
-          <option value="1">January</option>
-          <option value="2">February</option>
-          <option value="3">March</option>
-          <option value="4">April</option>
-          <option value="5">May</option>
-          <option value="6">June</option>
-          <option value="7">July</option>
-          <option value="8">August</option>
-          <option value="9">September</option>
-          <option value="10">October</option>
-          <option value="11">November</option>
-          <option value="12">December</option>
-        </select>
+        <div>
+          <label htmlFor="month">Month</label>
+          <select
+            id="month"
+            name="month"
+            placeholder="month"
+            value={this.props.month}
+            onChange={e => {
+              this.props.handleChange(e);
+            }}
+          >
+            <option value="">Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
         {this.props.errors.month && (
           <div className="container-error">
             <p>Zounds! Your birth month is required to continue!</p>
           </div>
         )}
 
-        <label htmlFor="day">Day</label>
-        <input
-          type="number"
-          min="1"
-          max="31"
-          id="day"
-          name="day"
-          placeholder="Day"
-          value={this.props.day}
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
-        />
+        <div>
+          <label htmlFor="day">Day</label>
+          <input
+            type="number"
+            min="1"
+            max="31"
+            id="day"
+            name="day"
+            placeholder="Day"
+            value={this.props.day}
+            onChange={e => {
+              this.props.handleChange(e);
+            }}
+          />
+        </div>
         {this.props.errors.day && (
           <div className="container-error">
             <p>Kindly input your birth day to operate the apparatus!</p>
           </div>
         )}
 
-        <label htmlFor="year">Year</label>
-        <input
-          type="number"
-          id="year"
-          name="year"
-          placeholder="Year"
-          value={this.props.year}
-          onChange={e => {
-            this.props.handleChange(e);
-          }}
-        />
+        <div>
+          <label htmlFor="year">Year</label>
+          <input
+            type="number"
+            id="year"
+            name="year"
+            placeholder="Year"
+            value={this.props.year}
+            onChange={e => {
+              this.props.handleChange(e);
+            }}
+          />
+        </div>
         {this.props.errors.year && (
           <div className="container-error">
             <p>Uh-oh! Please input your birth year to run the apparatus!</p>
@@ -128,7 +134,6 @@ class Form extends Component {
         )}
 
         <input type="submit" value="Get my Newspaper" />
-
         {Object.values(this.props.errors).some(err => err) && (
           <div className="container-error">
             <p>Zounds! The apparatus needs your missing inputs to run!</p>
