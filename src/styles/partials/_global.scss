@@ -9,9 +9,6 @@ body {
   background: $white;
   text-align: center;
   overflow-x: hidden;
-  // @include media (454px) {
-  //   font-size: rem-calc(24px);
-  // }
 }
 
 img {
@@ -30,6 +27,12 @@ img {
   z-index: -10;
 } 
 
+.container-main {
+  @include media(1200px) {
+    @include flex(row, nowrap, space-between, flex-start);
+  }
+}
+
 .wrapper {
   max-width: 1200px;
   width: 100%;
@@ -37,10 +40,10 @@ img {
   padding: 0 .6rem;
 
   @include media(576px) {
-    padding: 0 1rem;
+    padding: 0 1.2rem;
   }
-  @include media(576px) {
-    padding: 0 1.5rem;
+  @include media(996px) {
+    padding: 0 2.5rem;
   }
 }
 

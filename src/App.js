@@ -157,20 +157,22 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="vignette" />
-        <Header />
-        <Form
-          errors={this.state.errors}
-          name={this.state.name}
-          day={this.state.day}
-          month={this.state.month}
-          year={this.state.year}
-          city={this.state.city}
-          country={this.state.country}
-          handleChange={this.handleChange}
-          validateFormField={this.validateFormField}
-          submitForm={this.submitForm}
-          resetForm={this.resetForm}
-        />
+        <div className="container-main">
+          <Header />
+          <Form
+            errors={this.state.errors}
+            name={this.state.name}
+            day={this.state.day}
+            month={this.state.month}
+            year={this.state.year}
+            city={this.state.city}
+            country={this.state.country}
+            handleChange={this.handleChange}
+            validateFormField={this.validateFormField}
+            submitForm={this.submitForm}
+            resetForm={this.resetForm}
+          />
+        </div>
 
         {this.state.showResult && (
           <div>
