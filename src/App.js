@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Header from './components/Header.js'
-import Form from './components/Form.js'
+import Header from './components/Header.js';
+import Intro from './components/Intro.js';
+import Form from './components/Form.js';
 import Newspaper from './components/Newspaper.js';
 import Footer from './components/Footer.js';
 import './styles/App.css';
@@ -157,8 +158,9 @@ class App extends Component {
     return (
       <div className="wrapper">
         <div className="vignette" />
+        <Header />
         <div className="container-main">
-          <Header />
+          <Intro />
           <Form
             errors={this.state.errors}
             name={this.state.name}
@@ -198,7 +200,7 @@ class App extends Component {
             )}
           </div>
         )}
-      <Footer />
+        <Footer />
       </div>
     );
   }

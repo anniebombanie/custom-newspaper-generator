@@ -28,8 +28,11 @@ img {
 } 
 
 .container-main {
+  width: 100%;
   @include media(1200px) {
+    padding-top: 2rem;
     @include flex(row, nowrap, space-between, flex-start);
+
   }
 }
 

@@ -209,8 +209,13 @@ img {
   z-index: -10;
 }
 
+.container-main {
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .container-main {
+    padding-top: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -451,10 +456,16 @@ header .container-intro-content {
   }
 }
 
+@media (min-width: 1200px) {
+  header .container-intro-content {
+    width: 50%;
+  }
+}
+
 header p.hear-ye {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0;
 }
 
 header p.hear-ye::before {
@@ -484,10 +495,29 @@ header p.hear-ye::before {
   }
 }
 
+@media (min-width: 1200px) {
+  header p.hear-ye {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  form {
+    width: 49%;
+    padding-left: 3rem;
+  }
+}
+
 legend {
   font-weight: 700;
   margin-bottom: .5rem;
   font-style: italic;
+}
+
+@media (min-width: 1200px) {
+  legend:first-of-type {
+    margin-top: 1rem;
+  }
 }
 
 input[type="text"],
@@ -547,9 +577,36 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   }
 }
 
+@media (min-width: 1200px) {
+  .container-birthplace-fields,
+  .container-DOB-fields {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 @media (min-width: 768px) {
   .container-birthplace-fields div.inputText {
     width: calc(50% - .5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-birthplace-fields div.inputText {
+    width: 100%;
   }
 }
 
@@ -559,6 +616,15 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   }
   .container-DOB-fields div.inputNum {
     width: calc(35% - .5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-DOB-fields div.selectMonth {
+    width: 100%;
+  }
+  .container-DOB-fields div.inputNum {
+    width: 100%;
   }
 }
 
@@ -739,6 +805,10 @@ input[type="submit"]:active {
   input[type="submit"] {
     width: 50%;
   }
+}
+
+input[type="submit"] {
+  width: 100%;
 }
 
 a {

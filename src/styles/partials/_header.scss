@@ -116,12 +116,17 @@ h1 {
       }
     }
   }
+
+  @include media(1200px) {
+    width: 50%;
+  }
 }
+
 
 p.hear-ye {
     position: relative;
     display: inline-block;
-    margin-bottom: 1.6rem;
+    margin-bottom: 0;
 
     &::before {
       content: '';
@@ -142,6 +147,9 @@ p.hear-ye {
     @include media(768px) {
       font-size: 1.5rem;
       margin-top: .5rem;
+    }
+    @include media(1200px) {
+      margin-top: 2rem;
     }
   }
 }

@@ -1,7 +1,19 @@
+form {
+  @include media(1200px) {
+    width: 49%;
+    padding-left: 3rem;
+  }
+}
+
 legend {
   font-weight: 700;
   margin-bottom: .5rem;
   font-style: italic;
+  &:first-of-type{
+    @include media(1200px) {
+      margin-top: 1rem;
+    }
+  }
 }
 
 input[type="text"],
@@ -39,12 +51,20 @@ input[type="number"] {
   @include media(768px) {
     @include flex(row, nowrap, space-between, flex-start);
   }
+  @include media(1200px) {
+    @include flex(row, wrap, space-between, flex-start);
+  }
 }
 
 .container-birthplace-fields {
   @include media(768px) {
     div.inputText {
       width: calc(50% - .5rem);
+    }
+  }
+  @include media(1200px) {
+    div.inputText {
+      width: 100%;
     }
   }
 }
@@ -56,6 +76,14 @@ input[type="number"] {
     }
     div.inputNum {
       width: calc(35% - .5rem);
+    }
+  }
+  @include media(1200px) {
+    div.selectMonth {
+      width: 100%;
+    }
+    div.inputNum {
+      width: 100%;;
     }
   }
 }
