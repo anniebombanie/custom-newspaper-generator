@@ -75,7 +75,10 @@ class Form extends Component {
             </div>
             {this.props.errors.country && (
               <div className="container-error">
-                <p>Uh-oh.. The apparatus needs to know your country of birth to operate!</p>
+                <p>
+                  Uh-oh.. The apparatus needs to know your country of birth
+                  to operate!
+                </p>
               </div>
             )}
           </div>
@@ -85,92 +88,92 @@ class Form extends Component {
           <legend>When's your birthday?</legend>
           <div className="container-DOB-fields">
             <div>
-            <label htmlFor="month" className="visually-hidden">
-              Month
-            </label>
-            <select
-              id="month"
-              name="month"
-              placeholder="month"
-              value={this.props.month}
-              tabIndex="1"
-              onChange={e => {
-                this.props.handleChange(e);
-              }}
-              onBlur={this.validateFormField}
-            >
-              <option value="" disabled>
+              <label htmlFor="month" className="visually-hidden">
                 Month
-              </option>
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
-            </select>
-          </div>
-          {this.props.errors.month && (
-            <div className="container-error">
-              <p>Zounds! Your birth month is required to continue!</p>
+              </label>
+              <select
+                id="month"
+                name="month"
+                placeholder="month"
+                value={this.props.month}
+                tabIndex="1"
+                onChange={e => {
+                  this.props.handleChange(e);
+                }}
+                onBlur={this.validateFormField}
+              >
+                <option value="" disabled>
+                  Month
+                </option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
             </div>
-          )}
+            {this.props.errors.month && (
+              <div className="container-error">
+                <p>Zounds! Your birth month is required to continue!</p>
+              </div>
+            )}
 
-          <div>
-            <label htmlFor="day" className="visually-hidden">
-              Day
-            </label>
-            <input
-              type="number"
-              min="1"
-              max="31"
-              id="day"
-              name="day"
-              placeholder="Day"
-              value={this.props.day}
-              tabIndex="1"
-              onChange={e => {
-                this.props.handleChange(e);
-              }}
-              onBlur={this.validateFormField}
-            />
-          </div>
-          {this.props.errors.day && (
-            <div className="container-error">
-              <p>Kindly input your birth day to operate the apparatus!</p>
+            <div>
+              <label htmlFor="day" className="visually-hidden">
+                Day
+              </label>
+              <input
+                type="number"
+                min="1"
+                max="31"
+                id="day"
+                name="day"
+                placeholder="Day"
+                value={this.props.day}
+                tabIndex="1"
+                onChange={e => {
+                  this.props.handleChange(e);
+                }}
+                onBlur={this.validateFormField}
+              />
             </div>
-          )}
+            {this.props.errors.day && (
+              <div className="container-error">
+                <p>Kindly input your birth day to operate the apparatus!</p>
+              </div>
+            )}
 
-          <div>
-            <label htmlFor="year" className="visually-hidden">
-              Year
-            </label>
-            <input
-              type="number"
-              id="year"
-              name="year"
-              placeholder="Year"
-              value={this.props.year}
-              tabIndex="1"
-              onChange={e => {
-                this.props.handleChange(e);
-              }}
-              onBlur={this.validateFormField}
-            />
-          </div>
-          {this.props.errors.year && (
-            <div className="container-error">
-              <p>
-                Uh-oh! Please input your birth year to run the apparatus!
-              </p>
+            <div>
+              <label htmlFor="year" className="visually-hidden">
+                Year
+              </label>
+              <input
+                type="number"
+                id="year"
+                name="year"
+                placeholder="Year"
+                value={this.props.year}
+                tabIndex="1"
+                onChange={e => {
+                  this.props.handleChange(e);
+                }}
+                onBlur={this.validateFormField}
+              />
             </div>
-          )}
+            {this.props.errors.year && (
+              <div className="container-error">
+                <p>
+                  Uh-oh! Please input your birth year to run the apparatus!
+                </p>
+              </div>
+            )}
           </div>
         </div>
 

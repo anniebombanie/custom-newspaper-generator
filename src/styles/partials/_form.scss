@@ -43,8 +43,22 @@ input[type="number"] {
 
 .container-birthplace-fields {
   @include media(768px) {
-    input[type="text"] {
-      width: 99%;
+    div {
+      width: calc(50% - .5rem);
+    }
+  }
+}
+
+.container-DOB-fields {
+  @include media(768px) {
+    div:nth-child(1) {
+      width: calc(30% - .5rem);
+    }
+    div:nth-child(2) {
+      width: calc(35% - .5rem);
+    }
+    div:nth-child(3) {
+      width: calc(35% - .5rem);
     }
   }
 }

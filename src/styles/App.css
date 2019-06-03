@@ -474,8 +474,20 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 @media (min-width: 768px) {
-  .container-birthplace-fields input[type="text"] {
-    width: 99%;
+  .container-birthplace-fields div {
+    width: calc(50% - .5rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .container-DOB-fields div:nth-child(1) {
+    width: calc(30% - .5rem);
+  }
+  .container-DOB-fields div:nth-child(2) {
+    width: calc(35% - .5rem);
+  }
+  .container-DOB-fields div:nth-child(3) {
+    width: calc(35% - .5rem);
   }
 }
 
