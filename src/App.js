@@ -122,7 +122,7 @@ class App extends Component {
     if (valid) {
       //call API and dynamically insert month/name values from state
       axios({
-        url: `https://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+        url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
         method: 'GET',
       }).then(response => {
         this.setState({
