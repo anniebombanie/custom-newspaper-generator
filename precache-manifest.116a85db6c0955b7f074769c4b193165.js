@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "060715763643e03f5c601b47751a0d5c",
+    "revision": "762478392aa6eb79bc9ec65ef8b52318",
     "url": "/annie-liew-project-five/index.html"
   },
   {
-    "revision": "a3fcb94e8dfc2dd3e711",
+    "revision": "bc25f7982235f1a2d718",
     "url": "/annie-liew-project-five/static/css/main.9065da4c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/annie-liew-project-five/static/js/2.348e7d6f.chunk.js"
   },
   {
-    "revision": "a3fcb94e8dfc2dd3e711",
-    "url": "/annie-liew-project-five/static/js/main.410ccb3f.chunk.js"
+    "revision": "bc25f7982235f1a2d718",
+    "url": "/annie-liew-project-five/static/js/main.b287706c.chunk.js"
   },
   {
     "revision": "7d0407007dc6812acd6b",
