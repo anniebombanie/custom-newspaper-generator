@@ -138,14 +138,14 @@ class App extends Component {
       //   });
       // });
 
-
+      console.log(`5:38pm`)
       axios({
         method: 'GET',
         url: 'https://proxy.hackeryou.com',
         //OR url: 'https://proxy.hackeryou.com',
         dataResponse: 'json',
         params: {
-          reqUrl: `https://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+          reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
           proxyHeaders: {
             header_params: 'value',
           },
