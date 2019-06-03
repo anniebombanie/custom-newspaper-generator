@@ -1,14 +1,21 @@
-legend,
-label {
+legend {
   font-weight: 700;
+  margin-bottom: .5rem;
+  font-style: italic;
 }
 
 input[type="text"],
 input[type="number"],
-option {
+select {
   width: 100%;
+  height: 2rem;
+  border: none;
   padding: .2rem .5rem;
   margin-bottom: .5rem;
+}
+
+select {
+  border: none;
 }
 
 input[type="number"] {
@@ -18,6 +25,12 @@ input[type="number"] {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.container-name,
+.container-birthplace,
+.container-DOB {
+  margin-bottom: .8rem;
 }
 
 //ERROR BUBBLES
