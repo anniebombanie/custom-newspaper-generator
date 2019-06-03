@@ -120,9 +120,29 @@ class App extends Component {
     });
 
     if (valid) {
-      //call API and dynamically insert month/name values from state
+      // call API and dynamically insert month/name values from state
+      // axios({
+      //   method:'GET',
+      //   url: 'http://proxy.hackeryou.com',
+      //   //OR url: 'https://proxy.hackeryou.com',
+      //   dataType:'json',
+      //   data: {
+      //     reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+      //     xmlToJSON: false
+      //   }
+      // }).then(response => {
+      //   console.log(response);
+      //   this.setState({
+      //     historialFact: response.data,
+      //     isLoading: false,
+      //   });
+      // });
+
+
       axios({
-        url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+        url: `http://numbersapi.com/${this.state.month}/${
+          this.state.day
+        }/date`,
         method: 'GET',
       }).then(response => {
         this.setState({
