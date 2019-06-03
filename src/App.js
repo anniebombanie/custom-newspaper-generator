@@ -6,28 +6,31 @@ import Newspaper from './components/Newspaper.js';
 import './styles/App.css';
 
 
-// Set of validator functions to return boolean
+//Set of validator functions to return 'true'
 const validText = text => {
+  //make sure user doesn't type empty spaces
   return !!text.trim().length;
 }
 
 const validDay = day => {
+  //must input a number between 1-31
   if (typeof(Number(day)) === "number" && day >= 1 && day  <= 31) {
     return true;
   };
 };
 
 const validMonth = month => {
+  //if month is selected, return true
   return month;
 };
 
 const validYear = year => {
-  //if userInout doesn't match regex, return false
+  //if userInout doesn't match regex (4 digit number), return false
   const workingYear = /^\d{4}$/.test(year);
   return workingYear;
 };
 
-//mapping form fields to validator functions
+//Map form fields to validator functions
 const formValidators = {
   name: validText,
   day: validDay,
@@ -55,19 +58,17 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    //store values as variables to use later (so it's cleaner)
-    //target name of element so we know which one is being changed and then grab its value at the same time
+    //target name of element so we know which one is being changed and grab its value
     const targetName = e.target.name;
     const targetVal = e.target.value;
-
     //Getting validator function from map 
     const validator = formValidators[targetName];
-    console.log('VALIDATING')
+    
     this.setState({
       [targetName]: targetVal,
     });
 
-    //after update field, validate the field and see if return false
+    //after field is updated, validate it and see if it returns false
     if (!validator(targetVal)) {
       //if false, set error form field to true
       this.setState({
@@ -80,11 +81,6 @@ class App extends Component {
   };
 
   validateForm = (state) => {
-    // get the value of each input
-    // check if these values are what you want
-    // if they ALL are, this.submitForm();
-    // otherwise, showIndividualError()
-
     // return errors object for whole form
     return {
       name: !validText(state.name),
@@ -102,13 +98,10 @@ class App extends Component {
     e.preventDefault();
 
     const resultValidateForm = this.validateForm(this.state);
-    console.log(resultValidateForm);
     this.setState({
-      // set state.errors to reflect results of validation
+      //set state.errors to reflect results of validation
       errors: resultValidateForm
     });
-
-    // this.errors.every(resultValidateForm === false) && 
 
     let valid = true
 
@@ -117,11 +110,9 @@ class App extends Component {
       if (resultValidateForm[error] === true) {
         valid = false;
       }
-
     });
 
     if (valid) {
-
       //call API and dynamically insert month/name values from state
       axios({
         url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
@@ -138,9 +129,7 @@ class App extends Component {
         // showForm: false,
         showResult: true
       }); 
-
-    }
-    
+    }  
   };
 
   getRandomItem = arr => {

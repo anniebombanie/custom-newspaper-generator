@@ -53,7 +53,10 @@ class Form extends Component {
         />
         {this.props.errors.country && (
           <div className="container-error">
-            <p>Uh-oh.. The apparatus requires your birth month to operate!</p>
+            <p>
+              Uh-oh.. The apparatus needs to know your country of birth to
+              operate!
+            </p>
           </div>
         )}
 
@@ -84,7 +87,7 @@ class Form extends Component {
         </select>
         {this.props.errors.month && (
           <div className="container-error">
-            <p>Kindly input your country of birth to run the apparatus!</p>
+            <p>Zounds! Your birth month is required to continue!</p>
           </div>
         )}
 
@@ -103,7 +106,7 @@ class Form extends Component {
         />
         {this.props.errors.day && (
           <div className="container-error">
-            <p>Zounds! Your birth year is required to continue!</p>
+            <p>Kindly input your birth day to operate the apparatus!</p>
           </div>
         )}
 
@@ -120,7 +123,7 @@ class Form extends Component {
         />
         {this.props.errors.year && (
           <div className="container-error">
-            <p>Uh-oh! Please input your birth day to run the apparatus!</p>
+            <p>Uh-oh! Please input your birth year to run the apparatus!</p>
           </div>
         )}
 

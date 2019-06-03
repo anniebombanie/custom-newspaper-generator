@@ -363,7 +363,7 @@ header p:first-of-type::before {
 
 legend,
 label {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 input[type="text"],
@@ -386,9 +386,10 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 .container-error {
   display: inline-block;
-  margin: 0 auto .5rem;
+  margin: .2rem auto .5rem;
   padding: .4rem .6rem;
-  background-color: #EB4839;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EB4839), to(#db2716));
+  background-image: linear-gradient(#EB4839, #db2716);
   border-radius: 5px;
   position: relative;
 }
@@ -397,7 +398,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   content: "";
   position: absolute;
   top: -10px;
-  left: 10%;
+  left: 5%;
   border: 20px solid transparent;
   border-bottom-color: #EB4839;
   border-top: 0;

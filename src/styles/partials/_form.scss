@@ -1,6 +1,6 @@
 legend,
 label {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 input[type="text"],
@@ -8,7 +8,6 @@ input[type="number"],
 option {
   width: 100%;
   padding: .2rem .5rem;
-  // border: 1px solid $bronze;
 }
 
 input[type="number"] {
@@ -20,13 +19,13 @@ input[type="number"] {
   }
 }
 
-//ERROR
-// Bubble from: https://code-boxx.com/responsive-css-speech-bubbles/
+//ERROR BUBBLES
+//Inspired from: https://code-boxx.com/responsive-css-speech-bubbles/
 .container-error {
   display: inline-block;
   margin: .2rem auto .5rem;
   padding: .4rem .6rem;
-  background: gradient(linear $red;
+  background-image: linear-gradient($red, darken($red, 10));
   border-radius: 5px;
   position: relative;
 
