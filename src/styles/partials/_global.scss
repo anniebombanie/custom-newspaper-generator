@@ -39,6 +39,9 @@ img {
   @include media(576px) {
     padding: 0 1rem;
   }
+  @include media(576px) {
+    padding: 0 1.5rem;
+  }
 }
 
 
@@ -65,11 +68,3 @@ label,
 .uppercase {
   text-transform: uppercase;
 }
-
-// .margin-r-none {
-//   margin-right: 0;
-// }
-
-// .margin-l-none {
-//   margin-left: 0;
-// }

@@ -2,10 +2,14 @@
   background-color: $white;
   padding: 1rem .5rem;
   margin: 2rem auto 1rem;
-  box-shadow: 1px, 1px, 10px, 2px, $grey;
+  border: 1px solid lighten($grey, 49%);
 
   @include media(576px) {
     padding: 1.4rem 1rem;
+  }
+
+  @include media(996px) {
+    padding: 2rem;
   }
 
   p {
@@ -38,15 +42,6 @@
     margin: 0;
   }
 
-  img {
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    padding-top: .4rem;
-    padding-bottom: .4rem;
-  }
-
   .title-info-line {
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
@@ -54,6 +49,36 @@
     p {
       margin: .4rem 0;
       text-align: center;
+    }
+  }
+
+  .container-newspaper-content {
+    .container-img {
+      margin-top: 1.4rem;
+      margin-bottom: 1.4rem;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      padding-top: .4rem;
+      padding-bottom: .4rem;
+
+      @include media(996px) {
+        margin: 0 1.4rem;
+        border-top: none;
+        border-bottom: none;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        padding: 0 .4rem;
+      }
+    }
+    @include media(996px) {
+      text-align: left;
+      @include flex(row, nowrap, space-between, flex-start);
+      .container-img {
+        width: 38%;
+      }
+      .container-txt {
+        width: 31%;
+      }
     }
   }
 }

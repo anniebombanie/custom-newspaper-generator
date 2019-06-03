@@ -222,6 +222,12 @@ img {
   }
 }
 
+@media (min-width: 576px) {
+  .wrapper {
+    padding: 0 1.5rem;
+  }
+}
+
 p,
 label,
 .legend {
@@ -255,6 +261,12 @@ header h1 {
 @media (min-width: 576px) {
   header h1 {
     font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.6rem;
   }
 }
 
@@ -386,19 +398,46 @@ header .container-line div::after {
   }
 }
 
-header p:last-of-type {
+header .container-intro-content {
+  border-bottom: 4px solid #0B0906;
   margin-bottom: 2rem;
   padding-bottom: 1.6rem;
-  border-bottom: 4px solid #0B0906;
 }
 
-header p:first-of-type {
+@media (min-width: 996px) {
+  header .container-intro-content div {
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  header .container-intro-content div .container-img {
+    width: 30%;
+  }
+  header .container-intro-content div .container-txt {
+    width: 33%;
+  }
+}
+
+header p.hear-ye {
   position: relative;
   display: inline-block;
-  margin-bottom: 0;
+  margin-bottom: 1.6rem;
 }
 
-header p:first-of-type::before {
+header p.hear-ye::before {
   content: '';
   display: block;
   position: relative;
@@ -408,6 +447,21 @@ header p:first-of-type::before {
   background-size: contain;
   width: 316px;
   height: 22px;
+}
+
+@media (min-width: 768px) {
+  header p.hear-ye::before {
+    top: 30px;
+    left: -20px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  header p.hear-ye {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+  }
 }
 
 legend {
@@ -421,7 +475,7 @@ input[type="number"],
 select {
   width: 100%;
   height: 2rem;
-  border: none;
+  border: 1px solid #f2f2f0;
   padding: .2rem .5rem;
   margin-bottom: .5rem;
 }
@@ -526,13 +580,18 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   background-color: #F7F7F7;
   padding: 1rem .5rem;
   margin: 2rem auto 1rem;
-  -webkit-box-shadow: 1px, 1px, 10px, 2px, #7B7A6D;
-          box-shadow: 1px, 1px, 10px, 2px, #7B7A6D;
+  border: 1px solid #f2f2f0;
 }
 
 @media (min-width: 576px) {
   .newspaper {
     padding: 1.4rem 1rem;
+  }
+}
+
+@media (min-width: 996px) {
+  .newspaper {
+    padding: 2rem;
   }
 }
 
@@ -566,15 +625,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   margin: 0;
 }
 
-.newspaper img {
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
-  padding-top: .4rem;
-  padding-bottom: .4rem;
-}
-
 .newspaper .title-info-line {
   border-top: 1px solid #0B0906;
   border-bottom: 1px solid #0B0906;
@@ -584,6 +634,53 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .newspaper .title-info-line p {
   margin: .4rem 0;
   text-align: center;
+}
+
+.newspaper .container-newspaper-content .container-img {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+
+@media (min-width: 996px) {
+  .newspaper .container-newspaper-content .container-img {
+    margin: 0 1.4rem;
+    border-top: none;
+    border-bottom: none;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    padding: 0 .4rem;
+  }
+}
+
+@media (min-width: 996px) {
+  .newspaper .container-newspaper-content {
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .newspaper .container-newspaper-content .container-img {
+    width: 38%;
+  }
+  .newspaper .container-newspaper-content .container-txt {
+    width: 31%;
+  }
 }
 
 footer {

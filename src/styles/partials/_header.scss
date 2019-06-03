@@ -5,9 +5,13 @@ h1 {
   padding-bottom: .8rem;
   line-height: 1.3;
   font-size: 2.1rem;
+
   @include media(576px) {
       font-size: 2.3rem;
     }
+  @include media(768px) {
+    font-size: 2.6rem;
+  }
 }
 
 .container-logo {
@@ -40,8 +44,6 @@ h1 {
       right: -48px;
     }
   }
-
-
 }
 
 .logo-cog {
@@ -98,16 +100,29 @@ h1 {
   }
 }
 
-p:last-of-type {
+.container-intro-content {
+  border-bottom: 4px solid $black;
   margin-bottom: 2rem;
   padding-bottom: 1.6rem;
-  border-bottom: 4px solid $black;
+  div {
+    @include media(996px) {
+      text-align: left;
+      @include flex(row, nowrap, space-between, flex-start);
+      .container-img {
+      width: 30%;
+      }
+      .container-txt {
+        width: 33%;
+      }
+    }
+  }
 }
 
-p:first-of-type {
+p.hear-ye {
     position: relative;
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 1.6rem;
+
     &::before {
       content: '';
       display: block;
@@ -116,6 +131,17 @@ p:first-of-type {
       background-size: contain;
       width: 316px;
       height: 22px;
+
+      @include media(768px) {
+        top: 30px;
+        left: -20px;
+        height: 25px;
+      }
+    }
+
+    @include media(768px) {
+      font-size: 1.5rem;
+      margin-top: .5rem;
     }
   }
 }
