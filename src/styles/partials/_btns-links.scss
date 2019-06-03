@@ -2,10 +2,10 @@ button,
 input[type='submit'] {
   margin: .8rem auto;
   width: 100%;
-  font-family: $f-steampunk;
+  font-family: $steampunk;
   text-transform: uppercase;
   padding: 1rem;
-  border: 6px solid $brown;
+  border: 6px solid $bronze;
   &:hover {
     border: 6px solid transparent;
   }

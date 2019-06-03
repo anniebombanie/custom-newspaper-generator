@@ -4,10 +4,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form
-        action=""
-        onSubmit={this.props.submitForm}
-      >
+      <form action="" onSubmit={this.props.submitForm}>
         <label htmlFor="user-name">What's your full name?</label>
         <input
           type="text"
@@ -19,7 +16,11 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.name && <p className="error">Please enter your name!</p>}
+        {this.props.errors.name && (
+          <div className="container-error">
+            <p>Uh-oh! The apparatus needs your name to start!</p>
+          </div>
+        )}
 
         <legend>Where were you born?</legend>
         <label htmlFor="city">City</label>
@@ -33,7 +34,11 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.city && <p className="error">Please input your city!</p>}
+        {this.props.errors.city && (
+          <div className="container-error">
+            <p>Zounds! Please tell the apparatus your city of birth!</p>
+          </div>
+        )}
 
         <label htmlFor="country">Country</label>
         <input
@@ -46,7 +51,11 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.country && <p className="error">Please input your country!</p>}
+        {this.props.errors.country && (
+          <div className="container-error">
+            <p>Uh-oh.. The apparatus requires your birth month to operate!</p>
+          </div>
+        )}
 
         <legend>When's your birthday?</legend>
         <label htmlFor="month">Month</label>
@@ -73,7 +82,11 @@ class Form extends Component {
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        {this.props.errors.month && <p className="error">Please choose a month!</p>}
+        {this.props.errors.month && (
+          <div className="container-error">
+            <p>Kindly input your country of birth to run the apparatus!</p>
+          </div>
+        )}
 
         <label htmlFor="day">Day</label>
         <input
@@ -88,7 +101,11 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.day && <p className="error">Please enter a day!</p>}
+        {this.props.errors.day && (
+          <div className="container-error">
+            <p>Zounds! Your birth year is required to continue!</p>
+          </div>
+        )}
 
         <label htmlFor="year">Year</label>
         <input
@@ -101,12 +118,19 @@ class Form extends Component {
             this.props.handleChange(e);
           }}
         />
-        {this.props.errors.year && <p className="error">Please enter your year!</p>}
+        {this.props.errors.year && (
+          <div className="container-error">
+            <p>Uh-oh! Please input your birth day to run the apparatus!</p>
+          </div>
+        )}
 
         <input type="submit" value="Get my Newspaper" />
 
-        {Object.values(this.props.errors).some(err => err) 
-          && <p className="error">Please fill in the missing fields!</p>}
+        {Object.values(this.props.errors).some(err => err) && (
+          <div className="container-error">
+            <p>Zounds! The apparatus needs your missing inputs to run!</p>
+          </div>
+        )}
       </form>
     );
   }

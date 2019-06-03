@@ -2,3 +2,47 @@ legend,
 label {
   font-weight: 900;
 }
+
+input[type="text"],
+input[type="number"],
+option {
+  width: 100%;
+  padding: .2rem .5rem;
+  // border: 1px solid $bronze;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;/*For FireFox*/
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button { /*For Webkits like Chrome and Safari*/
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+//ERROR
+// Bubble from: https://code-boxx.com/responsive-css-speech-bubbles/
+.container-error {
+  display: inline-block;
+  margin: .2rem auto .5rem;
+  padding: .4rem .6rem;
+  background: gradient(linear $red;
+  border-radius: 5px;
+  position: relative;
+
+  &::after {
+    content: "";
+    @include position(absolute, -10px, null, null, 5%);
+    border: 20px solid transparent;
+    border-bottom-color: $red;
+    border-top: 0;
+  }
+
+  p {
+    margin: 0;
+    color: $white;
+    font-size: .8rem;
+    text-align: left;
+    letter-spacing: rem-calc(.2px);
+  }
+}
