@@ -465,9 +465,19 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   margin: 0;
 }
 
+.newspaper .img {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+
 .newspaper .title-info-line {
   border-top: 1px solid #0B0906;
   border-bottom: 1px solid #0B0906;
+  margin-bottom: 1rem;
 }
 
 .newspaper .title-info-line p {
@@ -487,8 +497,10 @@ input[type='submit'] {
   transition: all .2s;
 }
 
-button:hover,
-input[type='submit']:hover {
+button:hover, button:focus, button:active,
+input[type='submit']:hover,
+input[type='submit']:focus,
+input[type='submit']:active {
   border: 6px solid #F7F7F7;
   color: #F7F7F7;
   background-color: #685B27;

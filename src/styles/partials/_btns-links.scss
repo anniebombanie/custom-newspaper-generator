@@ -7,7 +7,9 @@ input[type='submit'] {
   padding: 1rem;
   border: 6px solid $bronze;
   transition: all .2s;
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     border: 6px solid $white;
     color: $white;
     background-color: $bronze;

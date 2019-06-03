@@ -15,6 +15,7 @@ class Form extends Component {
             id="name"
             placeholder="Full name"
             value={this.props.name}
+            tabindex="1"
             onChange={e => {
               this.props.handleChange(e);
             }}
@@ -38,6 +39,7 @@ class Form extends Component {
               id="city"
               placeholder="City"
               value={this.props.city}
+              tabindex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
@@ -59,6 +61,7 @@ class Form extends Component {
               id="country"
               placeholder="Country"
               value={this.props.country}
+              tabindex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
@@ -86,6 +89,7 @@ class Form extends Component {
               name="month"
               placeholder="month"
               value={this.props.month}
+              tabindex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
@@ -125,6 +129,7 @@ class Form extends Component {
               name="day"
               placeholder="Day"
               value={this.props.day}
+              tabindex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
@@ -146,6 +151,7 @@ class Form extends Component {
               name="year"
               placeholder="Year"
               value={this.props.year}
+              tabindex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
@@ -160,7 +166,7 @@ class Form extends Component {
           )}
         </div>
 
-        <input type="submit" value="Get my Newspaper" />
+        <input type="submit" value="Get my Newspaper" tabindex="1" />
         {Object.values(this.props.errors).some(err => err) && (
           <div className="container-error">
             <p>Zounds! The apparatus needs your missing inputs to run!</p>

@@ -24,7 +24,7 @@ class Newspaper extends Component {
         <img src={ad} alt='vintage fortune telling ad.' />
         <div className='baby'>
           <h4>World's Cutest Baby Born!</h4>
-          <p>Doctor's are astounded by the birth of {this.props.name}.<span className="italic">"Cutest baby I've ever seen in my life!"</span> gushes a besotted nurse. Parents are doing well.</p>
+          <p>Doctors are astounded by the birth of {this.props.name}.<span className="italic">"Cutest baby I've ever seen in my life!"</span> gushes a besotted nurse. Parents are doing well.</p>
         </div>
       </div>
     )

@@ -34,9 +34,19 @@
     margin: 0;
   }
 
+  .img {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+  }
+
   .title-info-line {
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
+    margin-bottom: 1rem;
     p {
       margin: .4rem 0;
       text-align: center;

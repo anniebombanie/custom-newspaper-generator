@@ -156,7 +156,7 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper">
-        <div className="vignette"></div>
+        <div className="vignette" />
         <Header />
         <Form
           errors={this.state.errors}
@@ -188,7 +188,7 @@ class App extends Component {
                   getRandomItem={this.getRandomItem}
                   newspaperTitle={this.state.newspaperTitle}
                 />
-                <button type="reset" onClick={this.resetForm}>
+                <button type="reset" onClick={this.resetForm} tabindex="1">
                   Another Newspaper
                 </button>
               </div>
