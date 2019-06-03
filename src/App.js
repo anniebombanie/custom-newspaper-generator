@@ -121,35 +121,14 @@ class App extends Component {
 
     if (valid) {
       // call API and dynamically insert month/name values from state
-      // axios({
-      //   method:'GET',
-      //   url: 'http://proxy.hackeryou.com',
-      //   //OR url: 'https://proxy.hackeryou.com',
-      //   dataType:'json',
-      //   data: {
-      //     reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
-      //     xmlToJSON: false
-      //   }
-      // }).then(response => {
-      //   console.log(response);
-      //   this.setState({
-      //     historialFact: response.data,
-      //     isLoading: false,
-      //   });
-      // });
-
-      console.log(`5:41pm`)
-      axios({
-        method: 'GET',
-        url: 'https://proxy.hackeryou.com',
-        //OR url: 'https://proxy.hackeryou.com',
-        dataResponse: 'json',
-        params: {
-          reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
-          // proxyHeaders: {
-          //   header_params: 'value',
-          // },
-          xmlToJSON: false,
+    axios({
+      method: 'GET',
+      url: 'https://proxy.hackeryou.com',
+      //OR url: 'https://proxy.hackeryou.com',
+      dataResponse: 'json',
+      params: {
+        reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+        xmlToJSON: false,
         },
       }).then(response => {
         this.setState({
@@ -157,20 +136,6 @@ class App extends Component {
           isLoading: false,
         });
       });
-
-
-      
-      // axios({
-      //   url: `http://numbersapi.com/${this.state.month}/${
-      //     this.state.day
-      //   }/date`,
-      //   method: 'GET',
-      // }).then(response => {
-      //   this.setState({
-      //     historialFact: response.data,
-      //     isLoading: false,
-      //   });
-      // });
 
       //change states for conditional rendering to display result
       this.setState({
