@@ -295,25 +295,25 @@ header h1 {
   }
 }
 
-header .container-logo {
+.container-logo {
   margin: 1rem auto 0;
   position: relative;
   width: 300px;
 }
 
-header .container-logo::before, header .container-logo::after {
+.container-logo::before, .container-logo::after {
   content: '';
   width: 115px;
   height: 23px;
 }
 
 @media (min-width: 576px) {
-  header .container-logo::before, header .container-logo::after {
+  .container-logo::before, .container-logo::after {
     width: 162px;
   }
 }
 
-header .container-logo::before {
+.container-logo::before {
   background: url("./../assets/logo-lines-l.svg") no-repeat;
   position: absolute;
   top: 19px;
@@ -321,12 +321,12 @@ header .container-logo::before {
 }
 
 @media (min-width: 576px) {
-  header .container-logo::before {
+  .container-logo::before {
     left: -48px;
   }
 }
 
-header .container-logo::after {
+.container-logo::after {
   background: url("./../assets/logo-lines-r.svg") no-repeat right;
   position: absolute;
   top: 19px;
@@ -334,12 +334,12 @@ header .container-logo::after {
 }
 
 @media (min-width: 576px) {
-  header .container-logo::after {
+  .container-logo::after {
     right: -48px;
   }
 }
 
-header .logo-cog {
+.logo-cog {
   height: 3rem;
   -webkit-animation: rotation 30s infinite linear;
           animation: rotation 30s infinite linear;
@@ -367,13 +367,13 @@ header .logo-cog {
   }
 }
 
-header .container-line {
+.container-line {
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
 }
 
-header .container-line div {
+.container-line div {
   width: 300px;
   height: 2.5px;
   background-color: #685B27;
@@ -381,19 +381,19 @@ header .container-line div {
 }
 
 @media (min-width: 576px) {
-  header .container-line div {
+  .container-line div {
     width: 396px;
   }
 }
 
-header .container-line div::before, header .container-line div::after {
+.container-line div::before, .container-line div::after {
   content: '';
   display: block;
   height: 2.5px;
   background-color: #685B27;
 }
 
-header .container-line div::before {
+.container-line div::before {
   width: 240px;
   position: absolute;
   top: 10px;
@@ -402,13 +402,13 @@ header .container-line div::before {
 }
 
 @media (min-width: 576px) {
-  header .container-line div::before {
+  .container-line div::before {
     width: 336px;
     margin-left: -168px;
   }
 }
 
-header .container-line div::after {
+.container-line div::after {
   width: 200px;
   position: absolute;
   top: 20px;
@@ -417,21 +417,20 @@ header .container-line div::after {
 }
 
 @media (min-width: 576px) {
-  header .container-line div::after {
+  .container-line div::after {
     width: 276px;
     margin-left: -138px;
   }
 }
 
-header .container-intro-content {
+.container-intro-content {
   border-bottom: 4px solid #0B0906;
   margin-bottom: 2rem;
   padding-bottom: 1.6rem;
 }
 
 @media (min-width: 996px) {
-  header .container-intro-content div {
-    text-align: left;
+  .container-intro-content div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -447,28 +446,29 @@ header .container-intro-content {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    text-align: left;
   }
-  header .container-intro-content div .container-img {
+  .container-intro-content div .container-img {
     width: 30%;
   }
-  header .container-intro-content div .container-txt {
+  .container-intro-content div .container-txt {
     width: 33%;
   }
 }
 
 @media (min-width: 1200px) {
-  header .container-intro-content {
+  .container-intro-content {
     width: 50%;
   }
 }
 
-header p.hear-ye {
+p.hear-ye {
   position: relative;
   display: inline-block;
   margin-bottom: 0;
 }
 
-header p.hear-ye::before {
+p.hear-ye::before {
   content: '';
   display: block;
   position: relative;
@@ -481,7 +481,7 @@ header p.hear-ye::before {
 }
 
 @media (min-width: 768px) {
-  header p.hear-ye::before {
+  p.hear-ye::before {
     top: 30px;
     left: -20px;
     height: 25px;
@@ -489,14 +489,14 @@ header p.hear-ye::before {
 }
 
 @media (min-width: 768px) {
-  header p.hear-ye {
+  p.hear-ye {
     font-size: 1.5rem;
     margin-top: .5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  header p.hear-ye {
+  p.hear-ye {
     margin-top: 2rem;
   }
 }

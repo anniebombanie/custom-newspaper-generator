@@ -7,13 +7,13 @@ h1 {
   font-size: 2.1rem;
 
   @include media(576px) {
-      font-size: 2.3rem;
+    font-size: 2.3rem;
     }
   @include media(768px) {
     font-size: 2.6rem;
+    }
   }
 }
-
 .container-logo {
   margin: 1rem auto 0;
   position: relative;
@@ -106,8 +106,8 @@ h1 {
   padding-bottom: 1.6rem;
   div {
     @include media(996px) {
-      text-align: left;
       @include flex(row, nowrap, space-between, flex-start);
+      text-align: left;
       .container-img {
       width: 30%;
       }
@@ -121,7 +121,6 @@ h1 {
     width: 50%;
   }
 }
-
 
 p.hear-ye {
     position: relative;
@@ -152,4 +151,3 @@ p.hear-ye {
       margin-top: 2rem;
     }
   }
-}

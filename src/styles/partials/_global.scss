@@ -32,7 +32,6 @@ img {
   @include media(1200px) {
     padding-top: 2rem;
     @include flex(row, nowrap, space-between, flex-start);
-
   }
 }
 
@@ -49,7 +48,6 @@ img {
     padding: 0 2.5rem;
   }
 }
-
 
 p,
 label,
