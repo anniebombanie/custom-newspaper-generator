@@ -371,6 +371,7 @@ input[type="number"],
 option {
   width: 100%;
   padding: .2rem .5rem;
+  margin-bottom: .5rem;
 }
 
 input[type="number"] {
@@ -468,16 +469,18 @@ input[type='submit'] {
   text-transform: uppercase;
   padding: 1rem;
   border: 6px solid #685B27;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 button:hover,
 input[type='submit']:hover {
-  border: 6px solid transparent;
+  border: 6px solid #F7F7F7;
+  color: #F7F7F7;
+  background-color: #685B27;
 }
 
 /* ===== IMAGE CREDITS ===== 
-Running boy: https://www.kisspng.com
 Printing Press: https://www.kissclipart.com
-Finger: http://clipart-library.com/clipart/pco5zo6zi.htm
 Pointing finger (svg): https://publicdomainvectors.org/en/free-clipart/Pointing-hand/36152.html */
 /*# sourceMappingURL=App.css.map */

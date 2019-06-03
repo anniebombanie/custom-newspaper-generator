@@ -144,6 +144,7 @@ class App extends Component {
       name: "",
       day: "",
       month: "",
+      year: "",
       city: "",
       country: "",
       historialFact: "",

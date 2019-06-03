@@ -6,7 +6,10 @@ input[type='submit'] {
   text-transform: uppercase;
   padding: 1rem;
   border: 6px solid $bronze;
+  transition: all .2s;
   &:hover {
-    border: 6px solid transparent;
+    border: 6px solid $white;
+    color: $white;
+    background-color: $bronze;
   }
 }
