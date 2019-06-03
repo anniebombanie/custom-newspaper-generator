@@ -140,7 +140,7 @@ class App extends Component {
 
 
       axios({
-        url: `http://numbersapi.com/${this.state.month}/${
+        url: `https://numbersapi.com/${this.state.month}/${
           this.state.day
         }/date`,
         method: 'GET',

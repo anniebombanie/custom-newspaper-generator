@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <div class="wrapper">
+        <div className="wrapper">
           <p>
             Designed & hand-coded with ♥ by <a href="http://www.anniebombanie.com" target="_blank" aria-label="go to Annie Liew's website."> Annie Liew</a>
           </p>

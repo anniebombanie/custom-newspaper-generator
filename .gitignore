@@ -28,3 +28,5 @@ firebase
 ./src/styles/App.min.css.map
 
 ./src/assets/logoCog.svg
+./App.test.js
+./data.json
