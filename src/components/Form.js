@@ -15,10 +15,11 @@ class Form extends Component {
             id="name"
             placeholder="Full name"
             value={this.props.name}
-            tabindex="1"
+            tabIndex="1"
             onChange={e => {
               this.props.handleChange(e);
             }}
+            onBlur={this.validateFormField}
           />
           {this.props.errors.name && (
             <div className="container-error">
@@ -39,10 +40,11 @@ class Form extends Component {
               id="city"
               placeholder="City"
               value={this.props.city}
-              tabindex="1"
+              tabIndex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
+              onBlur={this.validateFormField}
             />
           </div>
           {this.props.errors.city && (
@@ -61,10 +63,11 @@ class Form extends Component {
               id="country"
               placeholder="Country"
               value={this.props.country}
-              tabindex="1"
+              tabIndex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
+              onBlur={this.validateFormField}
             />
           </div>
           {this.props.errors.country && (
@@ -89,10 +92,11 @@ class Form extends Component {
               name="month"
               placeholder="month"
               value={this.props.month}
-              tabindex="1"
+              tabIndex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
+              onBlur={this.validateFormField}
             >
               <option value="" disabled>
                 Month
@@ -129,10 +133,11 @@ class Form extends Component {
               name="day"
               placeholder="Day"
               value={this.props.day}
-              tabindex="1"
+              tabIndex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
+              onBlur={this.validateFormField}
             />
           </div>
           {this.props.errors.day && (
@@ -151,10 +156,11 @@ class Form extends Component {
               name="year"
               placeholder="Year"
               value={this.props.year}
-              tabindex="1"
+              tabIndex="1"
               onChange={e => {
                 this.props.handleChange(e);
               }}
+              onBlur={this.validateFormField}
             />
           </div>
           {this.props.errors.year && (
@@ -166,7 +172,7 @@ class Form extends Component {
           )}
         </div>
 
-        <input type="submit" value="Get my Newspaper" tabindex="1" />
+        <input type="submit" value="Get my Newspaper" tabIndex="1" />
         {Object.values(this.props.errors).some(err => err) && (
           <div className="container-error">
             <p>Zounds! The apparatus needs your missing inputs to run!</p>

@@ -37,7 +37,7 @@ input[type="number"] {
 //Inspired from: https://code-boxx.com/responsive-css-speech-bubbles/
 .container-error {
   display: inline-block;
-  margin: .2rem auto .5rem;
+  margin: -1.2rem auto .5rem;
   padding: .4rem .6rem;
   background-image: linear-gradient($red, darken($red, 10));
   border-radius: 5px;

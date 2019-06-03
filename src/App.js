@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Newspaper from './components/Newspaper.js';
+import Footer from './components/Footer.js';
 import './styles/App.css';
 
 
@@ -31,7 +32,7 @@ const validYear = year => {
 };
 
 //Map form fields to validator functions
-const formValidators = {
+const formFieldValidators = {
   name: validText,
   day: validDay,
   month: validMonth,
@@ -44,44 +45,51 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      day: "",
-      month: "",
-      year: "",
-      city: "",
-      country: "",
-      historialFact: "",
+      name: '',
+      day: '',
+      month: '',
+      year: '',
+      city: '',
+      country: '',
+      historialFact: '',
       isLoading: true,
       showResult: false,
-      errors: {}
+      errors: {},
     };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     //target name of element so we know which one is being changed and grab its value
-    const targetName = e.target.name;
-    const targetVal = e.target.value;
-    //Getting validator function from map 
-    const validator = formValidators[targetName];
-    
     this.setState({
-      [targetName]: targetVal,
+      [e.target.name]: e.target.value,
     });
+  };
+
+  getRandomItem = arr => {
+    //get the value of a random index
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const randomItem = arr[randomIndex];
+    return randomItem;
+  };
+
+  validateFormField = e => {
+    //Getting validator function from map
+    const validator = formFieldValidators[e.target.name];
 
     //after field is updated, validate it and see if it returns false
-    if (!validator(targetVal)) {
+    if (!validator(e.target.value)) {
       //if false, set error form field to true
       this.setState({
         errors: {
           ...this.state.errors,
-          [targetName]: true,
-        }
+          [e.target.name]: true,
+        },
       });
-    }   
+    }
   };
 
-  validateForm = (state) => {
-    // return errors object for whole form
+  validateForm = state => {
+    // return errors (boolean for fields) object for whole form
     return {
       name: !validText(state.name),
       day: !validDay(state.day),
@@ -91,7 +99,6 @@ class App extends Component {
       country: !validText(state.country),
     };
   };
-  
 
   submitForm = e => {
     //prevent default behaviour of submit button
@@ -100,10 +107,10 @@ class App extends Component {
     const resultValidateForm = this.validateForm(this.state);
     this.setState({
       //set state.errors to reflect results of validation
-      errors: resultValidateForm
+      errors: resultValidateForm,
     });
 
-    let valid = true
+    let valid = true;
 
     Object.keys(resultValidateForm).forEach(error => {
       if (resultValidateForm[error] === true) {
@@ -115,41 +122,34 @@ class App extends Component {
       //call API and dynamically insert month/name values from state
       axios({
         url: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
-        method: "GET"
+        method: 'GET',
       }).then(response => {
         this.setState({
           historialFact: response.data,
-          isLoading: false
+          isLoading: false,
         });
       });
 
       //change states for conditional rendering to display result
       this.setState({
         // showForm: false,
-        showResult: true
-      }); 
-    }  
-  };
-
-  getRandomItem = arr => {
-    //get the value of a random index
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const randomItem = arr[randomIndex];
-    return randomItem;
+        showResult: true,
+      });
+    }
   };
 
   resetForm = () => {
     //reset all values
     this.setState({
-      name: "",
-      day: "",
-      month: "",
-      year: "",
-      city: "",
-      country: "",
-      historialFact: "",
+      name: '',
+      day: '',
+      month: '',
+      year: '',
+      city: '',
+      country: '',
+      historialFact: '',
       isLoading: true,
-      showResult: false
+      showResult: false,
     });
   };
 
@@ -167,6 +167,7 @@ class App extends Component {
           city={this.state.city}
           country={this.state.country}
           handleChange={this.handleChange}
+          validateFormField={this.validateFormField}
           submitForm={this.submitForm}
           resetForm={this.resetForm}
         />
@@ -188,13 +189,14 @@ class App extends Component {
                   getRandomItem={this.getRandomItem}
                   newspaperTitle={this.state.newspaperTitle}
                 />
-                <button type="reset" onClick={this.resetForm} tabindex="1">
+                <button type="reset" onClick={this.resetForm} tabIndex="1">
                   Another Newspaper
                 </button>
               </div>
             )}
           </div>
         )}
+      <Footer />
       </div>
     );
   }

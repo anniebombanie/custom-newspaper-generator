@@ -216,10 +216,16 @@ img {
   padding: 0 .6rem;
 }
 
+@media (min-width: 576px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+}
+
 p,
 label,
 .legend {
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .italic {
@@ -246,6 +252,12 @@ header h1 {
   font-size: 2.1rem;
 }
 
+@media (min-width: 576px) {
+  header h1 {
+    font-size: 2.3rem;
+  }
+}
+
 header .container-logo {
   margin: 1rem auto 0;
   position: relative;
@@ -254,9 +266,14 @@ header .container-logo {
 
 header .container-logo::before, header .container-logo::after {
   content: '';
-  max-width: 162px;
   width: 115px;
   height: 23px;
+}
+
+@media (min-width: 576px) {
+  header .container-logo::before, header .container-logo::after {
+    width: 162px;
+  }
 }
 
 header .container-logo::before {
@@ -266,11 +283,23 @@ header .container-logo::before {
   left: 0;
 }
 
+@media (min-width: 576px) {
+  header .container-logo::before {
+    left: -48px;
+  }
+}
+
 header .container-logo::after {
   background: url("./../assets/logo-lines-r.svg") no-repeat right;
   position: absolute;
   top: 19px;
   right: 0;
+}
+
+@media (min-width: 576px) {
+  header .container-logo::after {
+    right: -48px;
+  }
 }
 
 header .logo-cog {
@@ -308,11 +337,16 @@ header .container-line {
 }
 
 header .container-line div {
-  max-width: 100vw;
   width: 300px;
   height: 2.5px;
   background-color: #685B27;
   margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  header .container-line div {
+    width: 396px;
+  }
 }
 
 header .container-line div::before, header .container-line div::after {
@@ -330,12 +364,26 @@ header .container-line div::before {
   margin-left: -120px;
 }
 
+@media (min-width: 576px) {
+  header .container-line div::before {
+    width: 336px;
+    margin-left: -168px;
+  }
+}
+
 header .container-line div::after {
   width: 200px;
   position: absolute;
   top: 20px;
   left: 50%;
   margin-left: -100px;
+}
+
+@media (min-width: 576px) {
+  header .container-line div::after {
+    width: 276px;
+    margin-left: -138px;
+  }
 }
 
 header p:last-of-type {
@@ -401,7 +449,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 .container-error {
   display: inline-block;
-  margin: .2rem auto .5rem;
+  margin: -1.2rem auto .5rem;
   padding: .4rem .6rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EB4839), to(#db2716));
   background-image: linear-gradient(#EB4839, #db2716);
@@ -435,6 +483,12 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
           box-shadow: 1px, 1px, 10px, 2px, #7B7A6D;
 }
 
+@media (min-width: 576px) {
+  .newspaper {
+    padding: 1.4rem 1rem;
+  }
+}
+
 .newspaper p {
   text-align: justify;
 }
@@ -465,11 +519,11 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   margin: 0;
 }
 
-.newspaper .img {
+.newspaper img {
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
   padding-top: .4rem;
   padding-bottom: .4rem;
 }
@@ -483,6 +537,10 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .newspaper .title-info-line p {
   margin: .4rem 0;
   text-align: center;
+}
+
+footer p {
+  font-size: .8rem;
 }
 
 button,

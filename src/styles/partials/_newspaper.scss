@@ -4,6 +4,10 @@
   margin: 2rem auto;
   box-shadow: 1px, 1px, 10px, 2px, $grey;
 
+  @include media(576px) {
+    padding: 1.4rem 1rem;
+  }
+
   p {
     text-align: justify;
   }
@@ -34,11 +38,11 @@
     margin: 0;
   }
 
-  .img {
+  img {
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
     padding-top: .4rem;
     padding-bottom: .4rem;
   }

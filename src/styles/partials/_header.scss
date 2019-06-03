@@ -5,6 +5,9 @@ h1 {
   padding-bottom: .8rem;
   line-height: 1.3;
   font-size: 2.1rem;
+  @include media(576px) {
+      font-size: 2.3rem;
+    }
 }
 
 .container-logo {
@@ -14,18 +17,31 @@ h1 {
   &::before,
   &::after  {
     content: '';
-    max-width: 162px;
     width: 115px;
     height: 23px;
+
+    @include media(576px) {
+      width: 162px;
+    }
   }
   &::before {
     background: url('./../assets/logo-lines-l.svg') no-repeat;
     @include position(absolute, 19px, null, null, 0);
+
+    @include media(576px) {
+      left: -48px;
+    }
   }
   &::after {
     background: url('./../assets/logo-lines-r.svg') no-repeat right;
     @include position(absolute, 19px, 0, null, null);
+
+    @include media(576px) {
+      right: -48px;
+    }
   }
+
+
 }
 
 .logo-cog {
@@ -43,11 +59,15 @@ h1 {
   position: relative;
   margin-bottom: 1rem;
   div {
-    max-width: 100vw;
     width: 300px;
     height: 2.5px;  
     background-color: $bronze;
     margin: 0 auto;
+
+    @include media(576px) {
+      width: 396px;
+    }
+
     &::before,
     &::after {
       content: '';
@@ -59,11 +79,21 @@ h1 {
       width: 240px;
       @include position(absolute, 10px, null, null, 50%);
       margin-left: -120px;
+
+      @include media(576px) {
+        width: 336px;
+        margin-left: -168px;
+      }
     }
     &::after {
       width: 200px;
       @include position(absolute, 20px, null, null, 50%);
       margin-left: -100px;
+
+      @include media(576px) {
+        width: 276px;
+        margin-left: -138px;
+      }
     }
   }
 }
