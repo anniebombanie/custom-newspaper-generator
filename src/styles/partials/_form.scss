@@ -37,13 +37,13 @@ input[type="number"] {
 .container-DOB-fields {
   width: 100%;
   @include media(768px) {
-    @include flex(row, nowrap, space-between, center);
+    @include flex(row, nowrap, space-between, flex-start);
   }
 }
 
 .container-birthplace-fields {
   @include media(768px) {
-    div {
+    div.inputText {
       width: calc(50% - .5rem);
     }
   }
@@ -51,13 +51,10 @@ input[type="number"] {
 
 .container-DOB-fields {
   @include media(768px) {
-    div:nth-child(1) {
+    div.selectMonth {
       width: calc(30% - .5rem);
     }
-    div:nth-child(2) {
-      width: calc(35% - .5rem);
-    }
-    div:nth-child(3) {
+    div.inputNum {
       width: calc(35% - .5rem);
     }
   }
@@ -67,11 +64,15 @@ input[type="number"] {
 //Inspired from: https://code-boxx.com/responsive-css-speech-bubbles/
 .container-error {
   display: inline-block;
-  margin: -1.2rem auto .5rem;
+  margin: -1.2rem .5rem .5rem;
   padding: .4rem .6rem;
   background-image: linear-gradient($red, darken($red, 10));
   border-radius: 5px;
   position: relative;
+
+  @include media(768px) {
+    margin-top: -.2rem;
+  }
 
   &::after {
     content: "";

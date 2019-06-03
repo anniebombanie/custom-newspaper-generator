@@ -33,7 +33,7 @@ class Form extends Component {
         <div className="container-birthplace">
           <legend>Where were you born?</legend>
           <div className="container-birthplace-fields">
-            <div>
+            <div className="inputText">
               <label htmlFor="city" className="visually-hidden">
                 City
               </label>
@@ -49,14 +49,16 @@ class Form extends Component {
                 }}
                 onBlur={this.validateFormField}
               />
+              {this.props.errors.city && (
+                <div className="container-error">
+                  <p>
+                    Zounds! Please tell the apparatus your city of birth!
+                  </p>
+                </div>
+              )}
             </div>
-            {this.props.errors.city && (
-              <div className="container-error">
-                <p>Zounds! Please tell the apparatus your city of birth!</p>
-              </div>
-            )}
 
-            <div>
+            <div className="inputText">
               <label htmlFor="country" className="visually-hidden">
                 Country
               </label>
@@ -72,22 +74,22 @@ class Form extends Component {
                 }}
                 onBlur={this.validateFormField}
               />
+              {this.props.errors.country && (
+                <div className="container-error">
+                  <p>
+                    Uh-oh.. The apparatus needs to know your country of
+                    birth to operate!
+                  </p>
+                </div>
+              )}
             </div>
-            {this.props.errors.country && (
-              <div className="container-error">
-                <p>
-                  Uh-oh.. The apparatus needs to know your country of birth
-                  to operate!
-                </p>
-              </div>
-            )}
           </div>
         </div>
 
         <div className="container-DOB">
           <legend>When's your birthday?</legend>
           <div className="container-DOB-fields">
-            <div>
+            <div className="selectMonth">
               <label htmlFor="month" className="visually-hidden">
                 Month
               </label>
@@ -118,14 +120,14 @@ class Form extends Component {
                 <option value="11">November</option>
                 <option value="12">December</option>
               </select>
+              {this.props.errors.month && (
+                <div className="container-error">
+                  <p>Zounds! Your birth month is required to continue!</p>
+                </div>
+              )}
             </div>
-            {this.props.errors.month && (
-              <div className="container-error">
-                <p>Zounds! Your birth month is required to continue!</p>
-              </div>
-            )}
 
-            <div>
+            <div className="inputNum">
               <label htmlFor="day" className="visually-hidden">
                 Day
               </label>
@@ -143,14 +145,16 @@ class Form extends Component {
                 }}
                 onBlur={this.validateFormField}
               />
+              {this.props.errors.day && (
+                <div className="container-error">
+                  <p>
+                    Kindly input your birth day to operate the apparatus!
+                  </p>
+                </div>
+              )}
             </div>
-            {this.props.errors.day && (
-              <div className="container-error">
-                <p>Kindly input your birth day to operate the apparatus!</p>
-              </div>
-            )}
 
-            <div>
+            <div className="inputNum">
               <label htmlFor="year" className="visually-hidden">
                 Year
               </label>
@@ -166,14 +170,15 @@ class Form extends Component {
                 }}
                 onBlur={this.validateFormField}
               />
+              {this.props.errors.year && (
+                <div className="container-error">
+                  <p>
+                    Uh-oh! Please input your birth year to run the
+                    apparatus!
+                  </p>
+                </div>
+              )}
             </div>
-            {this.props.errors.year && (
-              <div className="container-error">
-                <p>
-                  Uh-oh! Please input your birth year to run the apparatus!
-                </p>
-              </div>
-            )}
           </div>
         </div>
 

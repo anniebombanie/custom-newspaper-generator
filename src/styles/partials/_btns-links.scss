@@ -1,5 +1,5 @@
 button,
-input[type='submit'] {
+input[type="submit"] {
   margin: .8rem auto;
   width: 100%;
   font-family: $steampunk;
@@ -13,6 +13,10 @@ input[type='submit'] {
     border: 6px solid $white;
     color: $white;
     background-color: $bronze;
+  }
+
+  @include media(768px) {
+    width: 50%;
   }
 }
 

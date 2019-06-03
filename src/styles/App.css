@@ -467,38 +467,41 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
 @media (min-width: 768px) {
-  .container-birthplace-fields div {
+  .container-birthplace-fields div.inputText {
     width: calc(50% - .5rem);
   }
 }
 
 @media (min-width: 768px) {
-  .container-DOB-fields div:nth-child(1) {
+  .container-DOB-fields div.selectMonth {
     width: calc(30% - .5rem);
   }
-  .container-DOB-fields div:nth-child(2) {
-    width: calc(35% - .5rem);
-  }
-  .container-DOB-fields div:nth-child(3) {
+  .container-DOB-fields div.inputNum {
     width: calc(35% - .5rem);
   }
 }
 
 .container-error {
   display: inline-block;
-  margin: -1.2rem auto .5rem;
+  margin: -1.2rem .5rem .5rem;
   padding: .4rem .6rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#EB4839), to(#db2716));
   background-image: linear-gradient(#EB4839, #db2716);
   border-radius: 5px;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .container-error {
+    margin-top: -.2rem;
+  }
 }
 
 .container-error::after {
@@ -594,7 +597,7 @@ footer p {
 }
 
 button,
-input[type='submit'] {
+input[type="submit"] {
   margin: .8rem auto;
   width: 100%;
   font-family: "Rye", cursive;
@@ -606,12 +609,19 @@ input[type='submit'] {
 }
 
 button:hover, button:focus, button:active,
-input[type='submit']:hover,
-input[type='submit']:focus,
-input[type='submit']:active {
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
   border: 6px solid #F7F7F7;
   color: #F7F7F7;
   background-color: #685B27;
+}
+
+@media (min-width: 768px) {
+  button,
+  input[type="submit"] {
+    width: 50%;
+  }
 }
 
 a {
