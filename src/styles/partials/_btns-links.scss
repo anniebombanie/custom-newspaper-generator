@@ -16,4 +16,14 @@ input[type='submit'] {
   }
 }
 
-a 
+// LINKS
+a {
+  text-decoration: none;
+  color: $bronze;
+  transition: border-bottom .2s;
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 2px solid $bronze;
+  }
+}

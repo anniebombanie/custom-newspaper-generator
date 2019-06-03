@@ -1,7 +1,7 @@
 .newspaper {
   background-color: $white;
   padding: 1rem .5rem;
-  margin: 2rem auto;
+  margin: 2rem auto 1rem;
   box-shadow: 1px, 1px, 10px, 2px, $grey;
 
   @include media(576px) {

@@ -33,6 +33,22 @@ input[type="number"] {
   margin-bottom: .8rem;
 }
 
+.container-birthplace-fields,
+.container-DOB-fields {
+  width: 100%;
+  @include media(768px) {
+    @include flex(row, nowrap, space-between, center);
+  }
+}
+
+.container-birthplace-fields {
+  @include media(768px) {
+    input[type="text"] {
+      width: 99%;
+    }
+  }
+}
+
 //ERROR BUBBLES
 //Inspired from: https://code-boxx.com/responsive-css-speech-bubbles/
 .container-error {

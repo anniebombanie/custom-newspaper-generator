@@ -6,84 +6,85 @@ class Form extends Component {
       <form action="" onSubmit={this.props.submitForm}>
         <div className="container-name">
           <legend>What's your full name?</legend>
-          <label htmlFor="user-name" className="visually-hidden">
-            Full name
-          </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Full name"
-            value={this.props.name}
-            tabIndex="1"
-            onChange={e => {
-              this.props.handleChange(e);
-            }}
-            onBlur={this.validateFormField}
-          />
-          {this.props.errors.name && (
-            <div className="container-error">
-              <p>Uh-oh! The apparatus needs your name to start!</p>
-            </div>
-          )}
+          <div className="container-name-fields">
+            <label htmlFor="user-name" className="visually-hidden">
+              Full name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full name"
+              value={this.props.name}
+              tabIndex="1"
+              onChange={e => {
+                this.props.handleChange(e);
+              }}
+              onBlur={this.validateFormField}
+            />
+            {this.props.errors.name && (
+              <div className="container-error">
+                <p>Uh-oh! The apparatus needs your name to start!</p>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="container-birthplace">
           <legend>Where were you born?</legend>
-          <div>
-            <label htmlFor="city" className="visually-hidden">
-              City
-            </label>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              placeholder="City"
-              value={this.props.city}
-              tabIndex="1"
-              onChange={e => {
-                this.props.handleChange(e);
-              }}
-              onBlur={this.validateFormField}
-            />
-          </div>
-          {this.props.errors.city && (
-            <div className="container-error">
-              <p>Zounds! Please tell the apparatus your city of birth!</p>
+          <div className="container-birthplace-fields">
+            <div>
+              <label htmlFor="city" className="visually-hidden">
+                City
+              </label>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City"
+                value={this.props.city}
+                tabIndex="1"
+                onChange={e => {
+                  this.props.handleChange(e);
+                }}
+                onBlur={this.validateFormField}
+              />
             </div>
-          )}
+            {this.props.errors.city && (
+              <div className="container-error">
+                <p>Zounds! Please tell the apparatus your city of birth!</p>
+              </div>
+            )}
 
-          <div>
-            <label htmlFor="country" className="visually-hidden">
-              Country
-            </label>
-            <input
-              type="text"
-              name="country"
-              id="country"
-              placeholder="Country"
-              value={this.props.country}
-              tabIndex="1"
-              onChange={e => {
-                this.props.handleChange(e);
-              }}
-              onBlur={this.validateFormField}
-            />
-          </div>
-          {this.props.errors.country && (
-            <div className="container-error">
-              <p>
-                {' '}
-                Uh-oh.. The apparatus needs to know your country of birth to
-                operate!
-              </p>
+            <div>
+              <label htmlFor="country" className="visually-hidden">
+                Country
+              </label>
+              <input
+                type="text"
+                name="country"
+                id="country"
+                placeholder="Country"
+                value={this.props.country}
+                tabIndex="1"
+                onChange={e => {
+                  this.props.handleChange(e);
+                }}
+                onBlur={this.validateFormField}
+              />
             </div>
-          )}
+            {this.props.errors.country && (
+              <div className="container-error">
+                <p>Uh-oh.. The apparatus needs to know your country of birth to operate!</p>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="container-DOB">
           <legend>When's your birthday?</legend>
-          <div>
+          <div className="container-DOB-fields">
+            <div>
             <label htmlFor="month" className="visually-hidden">
               Month
             </label>
@@ -170,6 +171,7 @@ class Form extends Component {
               </p>
             </div>
           )}
+          </div>
         </div>
 
         <input type="submit" value="Get my Newspaper" tabIndex="1" />
