@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/annie-liew-project-five/precache-manifest.ede171661916fc579abb906826d00c2b.js"
+  "/annie-liew-project-five/precache-manifest.3a31d2a54d4165b043283cda88e34954.js"
 );
 
 self.addEventListener('message', (event) => {
