@@ -1,8 +1,8 @@
 // VARIABLES
-$steampunk: 'Rye', cursive;
-$blackletter: 'UnifrakturCook', cursive;
-$fatface: 'Abril Fatface', cursive;
-$main: 'Vollkorn', serif;
+$steampunk: "Rye", cursive;
+$blackletter: "UnifrakturCook", cursive;
+$fatface: "Abril Fatface", cursive;
+$main: "Vollkorn", serif;
 
 $black: #0B0906;
 $white: #F7F7F7;
@@ -63,10 +63,10 @@ $global-font-size: 100% !default;
   //If no base is defined, defer to the global font size
   @if $base == null {
     $base: $global-font-size;
-  } @if unit($base) == '%' {
+  } @if unit($base) == "%" {
     $base: ($base / 100%) * 20px;
   } // Using rem as base allows correct scaling
-  @if unit($base) == 'rem' {
+  @if unit($base) == "rem" {
     $base: strip-unit($base) * 20px;
   } @if $count == 1 {
     @return -to-rem($values, $base);
@@ -77,14 +77,14 @@ $global-font-size: 100% !default;
 
 @function -to-rem($value, $base: null) {
   // Check if the value is a number
-  @if type-of($value) != 'number' {
-    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+  @if type-of($value) != "number" {
+    @warn inspect($value) + " was passed to rem-calc(), which is not a number.";
     @return $value;
-  } // Transform em into rem if someone hands over 'em's
-  @if unit($value) == 'em' {
+  } // Transform em into rem if someone hands over "em"s
+  @if unit($value) == "em" {
     $value: strip-unit($value) * 1rem;
   } // Calculate rem if units for $value is not rem or em
-  @if unit($value) != 'rem' {
+  @if unit($value) != "rem" {
     $value: strip-unit($value) / strip-unit($base) * 1rem;
   } // Turn 0rem into 0
   @if $value == 0rem {

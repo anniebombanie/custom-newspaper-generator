@@ -500,7 +500,7 @@ header h1 {
 @media (min-width: 1200px) {
   .container-intro-content {
     border-bottom: none;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     padding-right: 4rem;
   }
 }
