@@ -518,7 +518,7 @@ p.hear-ye {
 }
 
 p.hear-ye::before {
-  content: '';
+  content: "";
   display: block;
   position: relative;
   top: 22px;
@@ -527,6 +527,12 @@ p.hear-ye::before {
   background-size: contain;
   width: 316px;
   height: 22px;
+  -webkit-animation-name: pointing;
+          animation-name: pointing;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
 }
 
 @media (min-width: 768px) {
@@ -553,6 +559,36 @@ p.hear-ye::before {
 @media (min-width: 1200px) {
   p.hear-ye {
     margin-top: -.5rem;
+  }
+}
+
+@-webkit-keyframes pointing {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes pointing {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 

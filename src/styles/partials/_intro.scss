@@ -47,13 +47,16 @@ p.hear-ye {
   margin-bottom: 0;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     @include position(relative, 22px, null, null, 24px);
-    background: url('./../assets/pointing-finger.png') no-repeat;
+    background: url("./../assets/pointing-finger.png") no-repeat;
     background-size: contain;
     width: 316px;
     height: 22px;
+    animation-name: pointing;
+    animation-duration: .7s;
+    animation-iteration-count: 3;
 
     @include media(768px) {
       top: 30px;
@@ -72,4 +75,10 @@ p.hear-ye {
   @include media(1200px) {
     margin-top: -.5rem;
   }
+}
+
+@keyframes pointing {
+  0% {transform: translateX(0)}
+  50% {transform: translateX(10px)}
+  100% {transform: translateX(0)}
 }
