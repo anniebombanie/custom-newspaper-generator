@@ -7,14 +7,10 @@ import WebFont from "webfontloader";
 WebFont.load({
   google: {
     families: [
-      "Rye",
-      "cursive",
-      "Vollkorn:400, 400i, 700, 700i, 900, 900i",
-      "serif",
-      "Abril Fatface",
-      "cursive",
-      "UnifrakturCook",
-      "cursive",
+      "Rye", "cursive",
+      "Vollkorn: 400, 400i, 700, 700i, 900, 900i", "serif",
+      "Abril Fatface", "cursive",
+      "UnifrakturCook", "cursive",
     ],
   },
 });
