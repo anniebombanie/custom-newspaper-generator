@@ -1,0 +1,68 @@
+.container-intro-content {
+  border-bottom: 4px solid $black;
+  margin-bottom: 2rem;
+  padding-bottom: 1.6rem;
+
+  div {
+    @include media(996px) {
+      @include flex(row, nowrap, space-between, flex-start);
+      text-align: left;
+      .container-img {
+        width: 30%;
+
+        @include media(1200px) {
+          width: 100%;
+        }
+      }
+      .container-txt {
+        width: 34%;
+        @include media(1200px) {
+          width: 100%;
+        }
+      }
+    }
+
+    @include media(1200px) {
+      @include flex(column, nowrap, space-between, flex-start); 
+    }
+  }
+
+  @include media(1200px) {
+    border-bottom: none;
+    margin-bottom: 2rem;
+    padding-right: 4rem;
+  }
+}
+
+p.hear-ye {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    @include position(relative, 22px, null, null, 24px);
+    background: url('./../assets/pointing-finger.png') no-repeat;
+    background-size: contain;
+    width: 316px;
+    height: 22px;
+
+    @include media(768px) {
+      top: 30px;
+      left: -20px;
+      height: 25px;
+    }
+  }
+
+  @include media(768px) {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+  }
+  @include media(996px) {
+    margin-bottom: 1rem;
+  }
+  @include media(1200px) {
+    margin-top: -.5rem;
+  }
+}

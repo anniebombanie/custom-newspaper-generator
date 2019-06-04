@@ -11,7 +11,7 @@ class Newspaper extends Component {
 
   render() {
     return (
-      <div className="newspaper">
+      <div className="container-newspaper">
         <h2><span>The</span> {this.props.city} {this.props.getRandomItem(this.state.newspaperTitle)}</h2>
         <h3 className="uppercase">{this.props.country}’s no.1 Newspaper</h3>
         <div className="title-info-line">

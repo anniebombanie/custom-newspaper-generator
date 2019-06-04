@@ -308,7 +308,7 @@ header h1 {
 }
 
 .container-logo::before, .container-logo::after {
-  content: '';
+  content: "";
   width: 115px;
   height: 23px;
 }
@@ -393,7 +393,7 @@ header h1 {
 }
 
 .container-line div::before, .container-line div::after {
-  content: '';
+  content: "";
   display: block;
   height: 2.5px;
   background-color: #685B27;
@@ -457,37 +457,61 @@ header h1 {
   .container-intro-content div .container-img {
     width: 30%;
   }
-  .container-intro-content div .container-txt {
-    width: 33%;
-  }
 }
 
-@media (min-width: 1200px) {
-  .container-intro-content div .container-img,
-  .container-intro-content div .container-txt {
+@media (min-width: 996px) and (min-width: 1200px) {
+  .container-intro-content div .container-img {
     width: 100%;
   }
 }
 
 @media (min-width: 996px) {
+  .container-intro-content div .container-txt {
+    width: 34%;
+  }
+}
+
+@media (min-width: 996px) and (min-width: 1200px) {
+  .container-intro-content div .container-txt {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
   .container-intro-content div {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
 @media (min-width: 1200px) {
   .container-intro-content {
-    width: 50%;
+    border-bottom: none;
+    margin-bottom: 2rem;
+    padding-right: 4rem;
   }
 }
 
-.container-intro-content p.hear-ye {
+p.hear-ye {
   position: relative;
   display: inline-block;
   margin-bottom: 0;
 }
 
-.container-intro-content p.hear-ye::before {
+p.hear-ye::before {
   content: '';
   display: block;
   position: relative;
@@ -500,7 +524,7 @@ header h1 {
 }
 
 @media (min-width: 768px) {
-  .container-intro-content p.hear-ye::before {
+  p.hear-ye::before {
     top: 30px;
     left: -20px;
     height: 25px;
@@ -508,22 +532,27 @@ header h1 {
 }
 
 @media (min-width: 768px) {
-  .container-intro-content p.hear-ye {
+  p.hear-ye {
     font-size: 1.5rem;
     margin-top: .5rem;
   }
 }
 
+@media (min-width: 996px) {
+  p.hear-ye {
+    margin-bottom: 1rem;
+  }
+}
+
 @media (min-width: 1200px) {
-  .container-intro-content p.hear-ye {
-    margin-top: 2rem;
+  p.hear-ye {
+    margin-top: -.5rem;
   }
 }
 
 @media (min-width: 1200px) {
   form {
-    width: 49%;
-    padding-left: 3rem;
+    width: 50%;
   }
 }
 
@@ -681,7 +710,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   letter-spacing: 0.01rem;
 }
 
-.newspaper {
+.container-newspaper {
   background-color: #F7F7F7;
   padding: 1rem .5rem;
   margin: 2rem auto 1rem;
@@ -689,59 +718,59 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 @media (min-width: 576px) {
-  .newspaper {
+  .container-newspaper {
     padding: 1.4rem 1rem;
   }
 }
 
 @media (min-width: 996px) {
-  .newspaper {
+  .container-newspaper {
     padding: 2rem;
   }
 }
 
-.newspaper p {
+.container-newspaper p {
   text-align: justify;
 }
 
-.newspaper h2 {
+.container-newspaper h2 {
   font-family: "UnifrakturCook", cursive;
   font-size: 3rem;
   line-height: 1;
   margin: 0;
 }
 
-.newspaper h2 span {
+.container-newspaper h2 span {
   font-size: 2rem;
   display: block;
 }
 
-.newspaper h3,
-.newspaper h4 {
+.container-newspaper h3,
+.container-newspaper h4 {
   font-family: "Abril Fatface", cursive;
 }
 
-.newspaper h3 {
+.container-newspaper h3 {
   font-size: 1rem;
 }
 
-.newspaper h4 {
+.container-newspaper h4 {
   font-size: 1.7rem;
   margin: 0;
 }
 
-.newspaper .title-info-line {
+.container-newspaper .title-info-line {
   border-top: 1px solid #0B0906;
   border-bottom: 1px solid #0B0906;
   margin-bottom: 1rem;
 }
 
-.newspaper .title-info-line p {
+.container-newspaper .title-info-line p {
   margin: .4rem 0;
   text-align: center;
 }
 
-.newspaper .container-newspaper-content .container-img {
+.container-newspaper .container-newspaper-content .container-img {
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
   border-top: 3px solid black;
@@ -751,7 +780,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 @media (min-width: 996px) {
-  .newspaper .container-newspaper-content .container-img {
+  .container-newspaper .container-newspaper-content .container-img {
     margin: 0 1.4rem;
     border-top: none;
     border-bottom: none;
@@ -762,7 +791,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 @media (min-width: 996px) {
-  .newspaper .container-newspaper-content {
+  .container-newspaper .container-newspaper-content {
     text-align: left;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -780,10 +809,10 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .newspaper .container-newspaper-content .container-img {
+  .container-newspaper .container-newspaper-content .container-img {
     width: 38%;
   }
-  .newspaper .container-newspaper-content .container-txt {
+  .container-newspaper .container-newspaper-content .container-txt {
     width: 31%;
   }
 }
@@ -833,6 +862,12 @@ input[type="submit"]:active {
   button,
   input[type="submit"] {
     width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  button[type="reset"] {
+    width: 50%;
   }
 }
 

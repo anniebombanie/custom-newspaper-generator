@@ -23,7 +23,7 @@ h1 {
   width: 300px;
   &::before,
   &::after  {
-    content: '';
+    content: "";
     width: 115px;
     height: 23px;
 
@@ -31,16 +31,18 @@ h1 {
       width: 162px;
     }
   }
+
   &::before {
-    background: url('./../assets/logo-lines-l.svg') no-repeat;
+    background: url("./../assets/logo-lines-l.svg") no-repeat;
     @include position(absolute, 19px, null, null, 0);
 
     @include media(576px) {
       left: -48px;
     }
   }
+
   &::after {
-    background: url('./../assets/logo-lines-r.svg') no-repeat right;
+    background: url("./../assets/logo-lines-r.svg") no-repeat right;
     @include position(absolute, 19px, 0, null, null);
 
     @include media(576px) {
@@ -63,6 +65,7 @@ h1 {
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
+
   div {
     width: 300px;
     height: 2.5px;  
@@ -75,11 +78,12 @@ h1 {
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       display: block;
       height: 2.5px;  
       background-color: $bronze;
     }
+
     &::before {
       width: 240px;
       @include position(absolute, 10px, null, null, 50%);
@@ -90,6 +94,7 @@ h1 {
         margin-left: -168px;
       }
     }
+
     &::after {
       width: 200px;
       @include position(absolute, 20px, null, null, 50%);
@@ -99,67 +104,6 @@ h1 {
         width: 276px;
         margin-left: -138px;
       }
-    }
-  }
-}
-
-.container-intro-content {
-  border-bottom: 4px solid $black;
-  margin-bottom: 2rem;
-  padding-bottom: 1.6rem;
-  div {
-    @include media(996px) {
-      @include flex(row, nowrap, space-between, flex-start);
-      text-align: left;
-      .container-img {
-      width: 30%;
-      }
-      .container-txt {
-        width: 33%;
-      }
-    }
-    .container-img,
-    .container-txt {
-    @include media(1200px) {
-      width: 100%;
-      }
-    }
-     @include media(996px) {
-       display: block;
-     }
-  }
-
-  @include media(1200px) {
-    width: 50%;
-  }
-
-p.hear-ye {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0;
-
-    &::before {
-      content: '';
-      display: block;
-      @include position(relative, 22px, null, null, 24px);
-      background: url('./../assets/pointing-finger.png') no-repeat;
-      background-size: contain;
-      width: 316px;
-      height: 22px;
-
-      @include media(768px) {
-        top: 30px;
-        left: -20px;
-        height: 25px;
-      }
-    }
-
-    @include media(768px) {
-      font-size: 1.5rem;
-      margin-top: .5rem;
-    }
-    @include media(1200px) {
-      margin-top: 2rem;
     }
   }
 }

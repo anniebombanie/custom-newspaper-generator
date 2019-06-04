@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import axios from "axios";
-import animateScrollTo from "animated-scroll-to";
 import Header from "./components/Header.js";
 import Intro from "./components/Intro.js";
 import Form from "./components/Form.js";
@@ -120,9 +119,9 @@ class App extends Component {
     if (valid) {
       // call API and dynamically insert month/name values from state
     axios({
+      //use Proxy server to get past CORS
       method: "GET",
       url: "https://proxy.hackeryou.com",
-      //OR url: "https://proxy.hackeryou.com",
       dataResponse: "json",
       params: {
         reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
@@ -140,8 +139,6 @@ class App extends Component {
         // showForm: false,
         showResult: true,
       });
-
-      animateScrollTo(document.querySelector('.newspaper'));
     }
   };
 
@@ -183,7 +180,7 @@ class App extends Component {
         </div>
 
         {this.state.showResult && (
-          <div>
+          <div className="result">
             {this.state.isLoading ? (
               <p>Generating your custom newspaper...</p>
             ) : (
@@ -200,7 +197,7 @@ class App extends Component {
                   newspaperTitle={this.state.newspaperTitle}
                 />
                 <button type="reset" onClick={this.resetForm} tabIndex="1">
-                  Another Newspaper
+                  Get Another Newspaper
                 </button>
               </div>
             )}

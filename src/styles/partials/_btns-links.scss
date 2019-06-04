@@ -24,6 +24,12 @@ input[type="submit"] {
   }
 }
 
+button[type="reset"] {
+  @include media(1200px) {
+    width: 50%;
+  }
+}
+
 // LINKS
 a {
   text-decoration: none;
