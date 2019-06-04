@@ -1,33 +1,31 @@
-import React, {Component} from 'react';
-import axios from 'axios';
-import Header from './components/Header.js';
-import Intro from './components/Intro.js';
-import Form from './components/Form.js';
-import Newspaper from './components/Newspaper.js';
-import Footer from './components/Footer.js';
-import './styles/App.css';
+import React, {Component} from "react";
+import axios from "axios";
+import animateScrollTo from "animated-scroll-to";
+import Header from "./components/Header.js";
+import Intro from "./components/Intro.js";
+import Form from "./components/Form.js";
+import Newspaper from "./components/Newspaper.js";
+import Footer from "./components/Footer.js";
+import "./styles/App.css";
 
 
-//Set of validator functions to return 'true'
+//SET OF VALIDATOR FUNCTIONS TO RETURN BOOLEAN (TRUE)
 const validText = text => {
   //make sure user doesn't type empty spaces
   return !!text.trim().length;
 }
-
 const validDay = day => {
   //must input a number between 1-31
   if (typeof(Number(day)) === "number" && day >= 1 && day  <= 31) {
     return true;
   };
 };
-
 const validMonth = month => {
   //if month is selected, return true
   return month;
 };
-
 const validYear = year => {
-  //if userInout doesn't match regex (4 digit number), return false
+  //if userInput doesn't match regex (4 digit number), return false
   const workingYear = /^\d{4}$/.test(year);
   return workingYear;
 };
@@ -46,13 +44,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      day: '',
-      month: '',
-      year: '',
-      city: '',
-      country: '',
-      historialFact: '',
+      name: "",
+      day: "",
+      month: "",
+      year: "",
+      city: "",
+      country: "",
+      historialFact: "",
       isLoading: true,
       showResult: false,
       errors: {},
@@ -74,7 +72,7 @@ class App extends Component {
   };
 
   validateFormField = e => {
-    //Getting validator function from map
+    //get validator function from map
     const validator = formFieldValidators[e.target.name];
 
     //after field is updated, validate it and see if it returns false
@@ -122,10 +120,10 @@ class App extends Component {
     if (valid) {
       // call API and dynamically insert month/name values from state
     axios({
-      method: 'GET',
-      url: 'https://proxy.hackeryou.com',
-      //OR url: 'https://proxy.hackeryou.com',
-      dataResponse: 'json',
+      method: "GET",
+      url: "https://proxy.hackeryou.com",
+      //OR url: "https://proxy.hackeryou.com",
+      dataResponse: "json",
       params: {
         reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
         xmlToJSON: false,
@@ -142,19 +140,21 @@ class App extends Component {
         // showForm: false,
         showResult: true,
       });
+
+      animateScrollTo(document.querySelector('.newspaper'));
     }
   };
 
   resetForm = () => {
     //reset all values
     this.setState({
-      name: '',
-      day: '',
-      month: '',
-      year: '',
-      city: '',
-      country: '',
-      historialFact: '',
+      name: "",
+      day: "",
+      month: "",
+      year: "",
+      city: "",
+      country: "",
+      historialFact: "",
       isLoading: true,
       showResult: false,
     });
