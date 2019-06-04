@@ -500,8 +500,14 @@ header h1 {
 @media (min-width: 1200px) {
   .container-intro-content {
     border-bottom: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-main {
+    border-bottom: 4px solid #0B0906;
   }
 }
 
@@ -714,7 +720,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   background-color: #F7F7F7;
   padding: 1rem .5rem;
   margin: 2rem auto 1rem;
-  border: 1px solid #f2f2f0;
+  border: 1px solid #f4f4f3;
 }
 
 .container-newspaper p {

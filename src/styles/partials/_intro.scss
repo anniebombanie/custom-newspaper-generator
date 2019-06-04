@@ -29,8 +29,15 @@
 
   @include media(1200px) {
     border-bottom: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-right: 4rem;
+    
+  }
+}
+
+.container-main {
+  @include media(1200px) {
+    border-bottom: 4px solid $black;
   }
 }
 
