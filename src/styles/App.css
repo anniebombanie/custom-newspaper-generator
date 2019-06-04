@@ -717,18 +717,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   border: 1px solid #f2f2f0;
 }
 
-@media (min-width: 576px) {
-  .container-newspaper {
-    padding: 1.4rem 1rem;
-  }
-}
-
-@media (min-width: 996px) {
-  .container-newspaper {
-    padding: 2rem;
-  }
-}
-
 .container-newspaper p {
   text-align: justify;
 }
@@ -743,6 +731,18 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .container-newspaper h2 span {
   font-size: 2rem;
   display: block;
+}
+
+@media (min-width: 1200px) {
+  .container-newspaper h2 span {
+    font-size: 2.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-newspaper h2 {
+    font-size: 4.2rem;
+  }
 }
 
 .container-newspaper h3,
@@ -814,6 +814,18 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   }
   .container-newspaper .container-newspaper-content .container-txt {
     width: 31%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-newspaper {
+    padding: 1.4rem 1rem;
+  }
+}
+
+@media (min-width: 996px) {
+  .container-newspaper {
+    padding: 2rem;
   }
 }
 
