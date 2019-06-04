@@ -766,6 +766,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .container-newspaper h2 {
   font-family: "UnifrakturCook", cursive;
   font-size: 3rem;
+  font-weight: 700;
   line-height: 1;
   margin: 0;
 }
