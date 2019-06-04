@@ -7,9 +7,7 @@ class Form extends Component {
         <div className="container-name">
           <legend>What's your full name?</legend>
           <div className="container-name-fields">
-            <label htmlFor="user-name" className="visually-hidden">
-              Full name
-            </label>
+            <label htmlFor="user-name" className="visually-hidden">Full name</label>
             <input
               type="text"
               name="name"
@@ -24,7 +22,7 @@ class Form extends Component {
             />
             {this.props.errors.name && (
               <div className="container-error">
-                <p>Uh-oh! The apparatus needs your name to start!</p>
+                <p>Great zoots! The apparatus needs your name to start!</p>
               </div>
             )}
           </div>
@@ -34,9 +32,7 @@ class Form extends Component {
           <legend>Where were you born?</legend>
           <div className="container-birthplace-fields">
             <div className="inputText">
-              <label htmlFor="city" className="visually-hidden">
-                City
-              </label>
+              <label htmlFor="city" className="visually-hidden">City</label>
               <input
                 type="text"
                 name="city"
@@ -51,17 +47,13 @@ class Form extends Component {
               />
               {this.props.errors.city && (
                 <div className="container-error">
-                  <p>
-                    Zounds! Please tell the apparatus your city of birth!
-                  </p>
+                  <p>Zounds! Please tell the apparatus your city of birth!</p>
                 </div>
               )}
             </div>
 
             <div className="inputText">
-              <label htmlFor="country" className="visually-hidden">
-                Country
-              </label>
+              <label htmlFor="country" className="visually-hidden">Country</label>
               <input
                 type="text"
                 name="country"
@@ -76,10 +68,7 @@ class Form extends Component {
               />
               {this.props.errors.country && (
                 <div className="container-error">
-                  <p>
-                    Uh-oh.. The apparatus needs to know your country of
-                    birth to operate!
-                  </p>
+                  <p>Uh-oh.. The apparatus needs your country of birth to operate!</p>
                 </div>
               )}
             </div>
@@ -90,9 +79,7 @@ class Form extends Component {
           <legend>When's your birthday?</legend>
           <div className="container-DOB-fields">
             <div className="selectMonth">
-              <label htmlFor="month" className="visually-hidden">
-                Month
-              </label>
+              <label htmlFor="month" className="visually-hidden">Month</label>
               <select
                 id="month"
                 name="month"
@@ -104,9 +91,7 @@ class Form extends Component {
                 }}
                 onBlur={this.validateFormField}
               >
-                <option value="" disabled>
-                  Month
-                </option>
+                <option value="" disabled>Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
                 <option value="3">March</option>
@@ -128,9 +113,7 @@ class Form extends Component {
             </div>
 
             <div className="inputNum">
-              <label htmlFor="day" className="visually-hidden">
-                Day
-              </label>
+              <label htmlFor="day" className="visually-hidden">Day</label>
               <input
                 type="number"
                 min="1"
@@ -147,17 +130,13 @@ class Form extends Component {
               />
               {this.props.errors.day && (
                 <div className="container-error">
-                  <p>
-                    Kindly input your birth day to operate the apparatus!
-                  </p>
+                  <p>Kindly input your birth day to operate the apparatus!</p>
                 </div>
               )}
             </div>
 
             <div className="inputNum">
-              <label htmlFor="year" className="visually-hidden">
-                Year
-              </label>
+              <label htmlFor="year" className="visually-hidden">Year</label>
               <input
                 type="number"
                 id="year"
@@ -172,10 +151,7 @@ class Form extends Component {
               />
               {this.props.errors.year && (
                 <div className="container-error">
-                  <p>
-                    Uh-oh! Please input your birth year to run the
-                    apparatus!
-                  </p>
+                  <p>Uh-oh! Please input your birth year to run the apparatus!</p>
                 </div>
               )}
             </div>
@@ -183,9 +159,9 @@ class Form extends Component {
         </div>
 
         <input type="submit" value="Get my Newspaper" tabIndex="1" />
-        {Object.values(this.props.errors).some(err => err) && (
+        {Object.values(this.props.errors).some(error => error) && (
           <div className="container-error">
-            <p>Zounds! The apparatus needs your missing inputs to run!</p>
+            <p>Zounds! The apparatus requires your missing inputs to run!</p>
           </div>
         )}
       </form>

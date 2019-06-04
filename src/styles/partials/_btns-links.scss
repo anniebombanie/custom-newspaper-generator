@@ -1,27 +1,27 @@
 button,
 input[type="submit"] {
-  margin: .8rem auto;
+  margin: 1rem auto;
   width: 100%;
   font-family: $steampunk;
   text-transform: uppercase;
-  padding: 1rem;
-  border: 6px solid $bronze;
+  padding: .8rem;
+  position: relative;
+  box-shadow: 0 0 0 1px darken($bronze, 10%), 0 0 0 2px $white, 0 0 0 6px darken($bronze, 10%);
   transition: all .2s;
   &:hover,
   &:focus,
   &:active {
-    border: 6px solid $white;
+    box-shadow: 0 0 0 1px $white, 0 0 0 2px darken($bronze, 10%), 0 0 0 6px $white;
     color: $white;
-    background-color: $bronze;
+    background: darken($bronze, 10%);
   }
 
   @include media(768px) {
     width: 50%;
   }
-}
-
-input[type="submit"] {
-  width: 100%;
+  @include media(1200px) {
+    width: 100%;
+  }
 }
 
 // LINKS

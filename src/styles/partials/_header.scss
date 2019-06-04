@@ -9,11 +9,11 @@ h1 {
   @include media(576px) {
     font-size: 2.3rem;
     }
-  @include media(768px) {
+  @include media(996px) {
     font-size: 2.6rem;
     }
   @include media(1200px) {
-    font-size: 3rem;
+    font-size: 2.1rem;
     }
   }
 }

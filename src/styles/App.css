@@ -289,7 +289,7 @@ header h1 {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 996px) {
   header h1 {
     font-size: 2.6rem;
   }
@@ -297,7 +297,7 @@ header h1 {
 
 @media (min-width: 1200px) {
   header h1 {
-    font-size: 3rem;
+    font-size: 2.1rem;
   }
 }
 
@@ -800,12 +800,14 @@ footer p {
 
 button,
 input[type="submit"] {
-  margin: .8rem auto;
+  margin: 1rem auto;
   width: 100%;
   font-family: "Rye", cursive;
   text-transform: uppercase;
-  padding: 1rem;
-  border: 6px solid #685B27;
+  padding: .8rem;
+  position: relative;
+  -webkit-box-shadow: 0 0 0 1px #433b19, 0 0 0 2px #F7F7F7, 0 0 0 6px #433b19;
+          box-shadow: 0 0 0 1px #433b19, 0 0 0 2px #F7F7F7, 0 0 0 6px #433b19;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -814,9 +816,10 @@ button:hover, button:focus, button:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-  border: 6px solid #F7F7F7;
+  -webkit-box-shadow: 0 0 0 1px #F7F7F7, 0 0 0 2px #433b19, 0 0 0 6px #F7F7F7;
+          box-shadow: 0 0 0 1px #F7F7F7, 0 0 0 2px #433b19, 0 0 0 6px #F7F7F7;
   color: #F7F7F7;
-  background-color: #685B27;
+  background: #433b19;
 }
 
 @media (min-width: 768px) {
@@ -826,8 +829,11 @@ input[type="submit"]:active {
   }
 }
 
-input[type="submit"] {
-  width: 100%;
+@media (min-width: 1200px) {
+  button,
+  input[type="submit"] {
+    width: 100%;
+  }
 }
 
 a {
