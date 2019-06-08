@@ -8,9 +8,9 @@ WebFont.load({
   google: {
     families: [
       "Rye", "cursive",
-      "Vollkorn: 400, 400i, 700, 700i, 900, 900i", "serif",
+      "Vollkorn:400,400i,700,700i,900,900i", "serif",
       "Abril Fatface", "cursive",
-      "UnifrakturCook: 700", "cursive",
+      "UnifrakturCook:700", "cursive",
     ],
   },
 });
