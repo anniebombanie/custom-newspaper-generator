@@ -6,6 +6,7 @@ import Form from "./components/Form.js";
 import Newspaper from "./components/Newspaper.js";
 import Footer from "./components/Footer.js";
 import "./styles/App.css";
+import { promised } from "q";
 
 
 //SET OF VALIDATOR FUNCTIONS TO RETURN BOOLEAN (TRUE)
@@ -115,15 +116,40 @@ class App extends Component {
     }));
   };
 
-  validateForm = state => {
-    // return errors (boolean for fields) object for whole form
+  // validateForm = state => {
+  //   // return errors (boolean for fields) object for whole form
+  //   return {
+  //     name: !validText(state.name),
+  //     day: !validDay(state.day),
+  //     month: !validMonth(state.month),
+  //     year: !validYear(state.year),
+  //     city: !validText(state.city),
+  //     country: !validText(state.country),
+  //   };
+  // };
+
+  // submitForm = e => {
+  //   //prevent default behaviour of submit button
+  //   e.preventDefault();
+
+  //   const resultValidateForm = this.validateForm(this.state);
+  //   this.setState( {
+  //     //set state.errors to reflect results of validation
+  //     errors: resultValidateForm,
+  //   });
+
+
+  validateForm = () => {
+    // return errors (boolean for fields) object for whole form (MIGHT NOT ACTUALLY NEED IT IF ONBLUR IS WORKING & FASTER) - ur duplicating stuff- if change up there, must add here. MAKING SURE ALL is up to date (resultValidateForm)
+
+    //alternatively_ BETTER WAY: have the form validate onChange and have the errors show onBlur. What this means is that errors can disappear as soon as valid instead of when user goes out of field
     return {
-      name: !validText(state.name),
-      day: !validDay(state.day),
-      month: !validMonth(state.month),
-      year: !validYear(state.year),
-      city: !validText(state.city),
-      country: !validText(state.country),
+      name: !validText(this.state.name),
+      day: !validDay(this.state.day),
+      month: !validMonth(this.state.month),
+      year: !validYear(this.state.year),
+      city: !validText(this.state.city),
+      country: !validText(this.state.country),
     };
   };
 
@@ -131,37 +157,62 @@ class App extends Component {
     //prevent default behaviour of submit button
     e.preventDefault();
 
-    const resultValidateForm = this.validateForm(this.state);
+    const resultValidateForm = this.validateForm();
     this.setState( {
       //set state.errors to reflect results of validation
       errors: resultValidateForm,
     });
 
-    let valid = true;
+    //now we have an object with all fields, so checking if no errors. It's going to be TRUE unless one this is invalid
+    // let valid = true;
 
-    Object.keys(resultValidateForm).forEach(error => {
-      if (resultValidateForm[error] === true) {
-        valid = false;
-      }
-    });
+    // Object.keys(resultValidateForm).forEach(error => {
+    //   if (resultValidateForm[error] === true) {
+    //     valid = false;
+    //   }
+    // });
+
+    //have array of booleans and making sure all is false (every is a method that takes a function that returns a boolean). hasError = result of value of each field. If there is an error, we WANT valid = false. Above version without .every or .some will go through EVERY SINGLE THING so it's performance expensive/ .every & .some stops as soon as hits one
+    const valid = Object.values(resultValidateForm).every(hasError => (!hasError));
 
     if (valid) {
       // call API and dynamically insert month/name values from state
-      axios({
-      //use Proxy server to get past CORS
-      method: "GET",
-      url: "https://proxy.hackeryou.com",
-      dataResponse: "json",
-      params: {
-        reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
-        xmlToJSON: false,
-        },
-      }).then(response => {
-        this.setState({
-          historialFact: response.data,
-          isLoading: false,
+      
+     //will wait for everything u put in the [] which are all your different API
+      Promise.all([
+        axios({
+          //use Proxy server to get past CORS
+          method: "GET",
+          url: "https://proxy.hackeryou.com",
+          dataResponse: "json",
+          params: {
+            reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+            xmlToJSON: false,
+            },
+          }),
+          // axios({})
+      ]).then(([response]) => { //array destructuring (responses) {something like api1response & so on forth}
+          this.setState({
+            historialFact: response.data, //responses[0].data
+            isLoading: false,
+          });
         });
-      });
+      
+      // axios({
+      // //use Proxy server to get past CORS
+      // method: "GET",
+      // url: "https://proxy.hackeryou.com",
+      // dataResponse: "json",
+      // params: {
+      //   reqUrl: `http://numbersapi.com/${this.state.month}/${this.state.day}/date`,
+      //   xmlToJSON: false,
+      //   },
+      // }).then(response => {
+      //   this.setState({
+      //     historialFact: response.data,
+      //     isLoading: false,
+      //   });
+      // });
 
       //change states for conditional rendering to display result
       this.setState({
@@ -172,8 +223,14 @@ class App extends Component {
   };
 
   resetForm = () => {
+    
+    // const values = {};
+    // Object.keys(this.state.values).forEach(key => {values[key] = "")
+    // this.setState ({values})
+
     //reset all values
     this.setState({
+      // values: values,
       name: "",
       day: "",
       month: "",
@@ -190,6 +247,8 @@ class App extends Component {
     //if userInput doesn't match regex (4 digit number), return false
     const workingYear = /^\d{4}$/.test(year);
     return workingYear;
+
+    // return /^\d{4}$/.test(year);
   }
 
   render() {
@@ -250,6 +309,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
