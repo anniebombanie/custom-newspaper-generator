@@ -18,7 +18,7 @@ class Form extends Component {
               onChange={e => {
                 this.props.handleChange(e);
               }}
-              onBlur={this.validateFormField}
+              onBlur={this.props.validateFormField}
             />
             {this.props.errors.name && (
               <div className="container-error">
@@ -43,7 +43,7 @@ class Form extends Component {
                 onChange={e => {
                   this.props.handleChange(e);
                 }}
-                onBlur={this.validateFormField}
+                onBlur={this.props.validateFormField}
               />
               {this.props.errors.city && (
                 <div className="container-error">
@@ -64,7 +64,7 @@ class Form extends Component {
                 onChange={e => {
                   this.props.handleChange(e);
                 }}
-                onBlur={this.validateFormField}
+                onBlur={this.props.validateFormField}
               />
               {this.props.errors.country && (
                 <div className="container-error">
@@ -89,7 +89,7 @@ class Form extends Component {
                 onChange={e => {
                   this.props.handleChange(e);
                 }}
-                onBlur={this.validateFormField}
+                onBlur={this.props.validateFormField}
               >
                 <option value="" disabled>Month</option>
                 <option value="1">January</option>
@@ -126,7 +126,7 @@ class Form extends Component {
                 onChange={e => {
                   this.props.handleChange(e);
                 }}
-                onBlur={this.validateFormField}
+                onBlur={this.props.validateFormField}
               />
               {this.props.errors.day && (
                 <div className="container-error">
@@ -144,10 +144,8 @@ class Form extends Component {
                 placeholder="Year"
                 value={this.props.year}
                 tabIndex="1"
-                onChange={e => {
-                  this.props.handleChange(e);
-                }}
-                onBlur={this.validateFormField}
+                onChange={this.props.handleChange}
+                onBlur={this.props.validateFormField}
               />
               {this.props.errors.year && (
                 <div className="container-error">
