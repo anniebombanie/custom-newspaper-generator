@@ -175,7 +175,6 @@ class App extends Component {
 
     if (valid) {
       // call API and dynamically insert month/name values from state
-      
      //will wait for everything u put in the [] which are all your different API
       Promise.all([
         axios({
@@ -221,7 +220,6 @@ class App extends Component {
   };
 
   resetForm = () => {
-    
     // const values = {};
     // Object.keys(this.state.values).forEach(key => {values[key] = "")
     // this.setState ({values})

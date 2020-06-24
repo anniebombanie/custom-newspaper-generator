@@ -1,5 +1,5 @@
 {
-  "name": "annie-liew-project-five",
+  "name": "custom-newspaper-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,5 +36,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://anniebombanie.github.io/annie-liew-project-five/"
+  "homepage": "https://anniebombanie.github.io/custom-newspaper-generator/"
 }
