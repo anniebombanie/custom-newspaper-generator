@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/annie-liew-project-five/static/css/main.81d887a5.chunk.css",
-    "main.js": "/annie-liew-project-five/static/js/main.49b68423.chunk.js",
-    "main.js.map": "/annie-liew-project-five/static/js/main.49b68423.chunk.js.map",
-    "runtime~main.js": "/annie-liew-project-five/static/js/runtime~main.a6913a76.js",
-    "runtime~main.js.map": "/annie-liew-project-five/static/js/runtime~main.a6913a76.js.map",
-    "static/js/2.ddb8b092.chunk.js": "/annie-liew-project-five/static/js/2.ddb8b092.chunk.js",
-    "static/js/2.ddb8b092.chunk.js.map": "/annie-liew-project-five/static/js/2.ddb8b092.chunk.js.map",
-    "index.html": "/annie-liew-project-five/index.html",
-    "precache-manifest.3d6fd2ba5556770bdc3937b05c4c4342.js": "/annie-liew-project-five/precache-manifest.3d6fd2ba5556770bdc3937b05c4c4342.js",
-    "service-worker.js": "/annie-liew-project-five/service-worker.js",
-    "static/css/main.81d887a5.chunk.css.map": "/annie-liew-project-five/static/css/main.81d887a5.chunk.css.map",
-    "static/media/cog.svg": "/annie-liew-project-five/static/media/cog.cb9a93cf.svg",
-    "static/media/App.css": "/annie-liew-project-five/static/media/pointing-finger.a091e878.png",
-    "static/media/printing-press.png": "/annie-liew-project-five/static/media/printing-press.19c8569d.png",
-    "static/media/soothsaying-ad.svg": "/annie-liew-project-five/static/media/soothsaying-ad.98154d27.svg"
+    "main.css": "/custom-newspaper-generator/static/css/main.7389f9a8.chunk.css",
+    "main.js": "/custom-newspaper-generator/static/js/main.198317ec.chunk.js",
+    "main.js.map": "/custom-newspaper-generator/static/js/main.198317ec.chunk.js.map",
+    "runtime~main.js": "/custom-newspaper-generator/static/js/runtime~main.b2a88b18.js",
+    "runtime~main.js.map": "/custom-newspaper-generator/static/js/runtime~main.b2a88b18.js.map",
+    "static/js/2.8319c8a8.chunk.js": "/custom-newspaper-generator/static/js/2.8319c8a8.chunk.js",
+    "static/js/2.8319c8a8.chunk.js.map": "/custom-newspaper-generator/static/js/2.8319c8a8.chunk.js.map",
+    "index.html": "/custom-newspaper-generator/index.html",
+    "precache-manifest.879760a456a203b9ad7497b5363c29b9.js": "/custom-newspaper-generator/precache-manifest.879760a456a203b9ad7497b5363c29b9.js",
+    "service-worker.js": "/custom-newspaper-generator/service-worker.js",
+    "static/css/main.7389f9a8.chunk.css.map": "/custom-newspaper-generator/static/css/main.7389f9a8.chunk.css.map",
+    "static/media/cog.svg": "/custom-newspaper-generator/static/media/cog.cb9a93cf.svg",
+    "static/media/App.css": "/custom-newspaper-generator/static/media/pointing-finger.a091e878.png",
+    "static/media/printing-press.png": "/custom-newspaper-generator/static/media/printing-press.19c8569d.png",
+    "static/media/soothsaying-ad.svg": "/custom-newspaper-generator/static/media/soothsaying-ad.98154d27.svg"
   }
 }
