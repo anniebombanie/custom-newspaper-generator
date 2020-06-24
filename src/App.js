@@ -6,7 +6,6 @@ import Form from "./components/Form.js";
 import Newspaper from "./components/Newspaper.js";
 import Footer from "./components/Footer.js";
 import "./styles/App.css";
-import { promised } from "q";
 
 
 //SET OF VALIDATOR FUNCTIONS TO RETURN BOOLEAN (TRUE)
@@ -101,7 +100,6 @@ class App extends Component {
     //   });
     // }
 
-   
     //React makes synthnic events so after function ends, not garenteed to have access to target anymore. (might have changed) In function so async, we want to make sure we have access to the values at time of invocation. When original function is called.
     const value= e.target.value;
     const name= e.target.name;
@@ -197,7 +195,7 @@ class App extends Component {
             isLoading: false,
           });
         });
-      
+
       // axios({
       // //use Proxy server to get past CORS
       // method: "GET",
