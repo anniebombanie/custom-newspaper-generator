@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "animated-scroll-to": "^1.2.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "firebase": "^6.1.0",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
